@@ -76,7 +76,6 @@ public class HomeWorkSession3 {
         System.out.println("The result of the division of the two numbers is " + (firstNum / secondNum));
         System.out.println("The modulus of the two numbers is " + (firstNum % secondNum));
     }
-
     public void exercise2() {
         int myNumber = 5;
         System.out.println("The value of myNumber is " + myNumber);
@@ -85,7 +84,6 @@ public class HomeWorkSession3 {
         myNumber--;
         System.out.println("After decrementing, the value of myNumber is " + myNumber);
     }
-
     public void exercise3() {
         int myNum = getValidInt();
         if (!(myNum == 0)) {
@@ -94,7 +92,6 @@ public class HomeWorkSession3 {
             System.out.println("The number is neither negative nor positive.");
         }
     }
-
     public void exercise4() {
         int myNum = 0;
         while (myNum < 10) {
@@ -104,7 +101,6 @@ public class HomeWorkSession3 {
             System.out.println("myNum is equal to " + --myNum);
         }
     }
-
     public void exercise5() {
         int firstNum = 5, secondNum = 3;
         firstNum += secondNum;
@@ -229,7 +225,7 @@ public class HomeWorkSession3 {
         discount /= 100;
         double finalPrice = originalPrice;
         finalPrice -= originalPrice * discount;
-        System.out.println("The price of the item after discout is " + finalPrice);
+        System.out.println("The price of the item after discount is " + finalPrice);
     }
     public void exercise14(){
         int myInt = getValidInt();
@@ -242,6 +238,19 @@ public class HomeWorkSession3 {
     public static void main(String[] args) {
 
         HomeWorkSession3 homeWork = new HomeWorkSession3();
+        homeWork.exercise1();
+        homeWork.exercise2();
+        homeWork.exercise3();
+        homeWork.exercise4();
+        homeWork.exercise5();
+        homeWork.exercise6();
+        homeWork.exercise7();
+        homeWork.exercise8();
+        homeWork.exercise9();
+        homeWork.exercise10();
+        homeWork.exercise11();
+        homeWork.exercise12();
+        homeWork.exercise13();
         homeWork.exercise14();
     }
 }
