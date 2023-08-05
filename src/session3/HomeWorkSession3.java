@@ -86,10 +86,12 @@ public class HomeWorkSession3 {
     }
     public void exercise3() {
         int myNum = getValidInt();
-        if (!(myNum == 0)) {
-            System.out.println("The number is negative or positive.");
+        boolean isNotNegative = (myNum >= 0);
+        boolean isNegative = !isNotNegative;
+        if (isNegative) {
+            System.out.println("The number is negative.");
         } else {
-            System.out.println("The number is neither negative nor positive.");
+            System.out.println("The number is neither negative or zero.");
         }
     }
     public void exercise4() {
