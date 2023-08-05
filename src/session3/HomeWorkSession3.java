@@ -111,7 +111,6 @@ public class HomeWorkSession3 {
         firstNum /= secondNum;
         firstNum %= 2;
     }
-
     public void exercise6() {
         double[] validInputs = this.getTwoValidDoubles();
         double firstNum = validInputs[0];
@@ -123,7 +122,6 @@ public class HomeWorkSession3 {
         System.out.println("The statement that the first number and second numbers are equal is " +
                 (firstNum == secondNum) + ".");
     }
-
     public void exercise7() {
         int myIntegerNumber = 7;
         double myDoubleNumber = 3.13;
