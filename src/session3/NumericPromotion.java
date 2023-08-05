@@ -9,10 +9,10 @@ public class NumericPromotion {
 //        double result = x + y;
 //        System.out.println("result is " + result);
 
-        char a = '1';
+        char a = '0';
         short b = 1;
 
-        int resultTwo = a + b;
+        int resultTwo = a + a;
         System.out.println(resultTwo); // print 50
     }
 }
