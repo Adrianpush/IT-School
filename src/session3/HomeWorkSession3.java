@@ -3,12 +3,12 @@ package session3;
 import java.util.Scanner;
 
 public class HomeWorkSession3 {
-    final Scanner scanner;
+    private final Scanner scanner;
 
     public HomeWorkSession3() {
         this.scanner = new Scanner(System.in);
     }
-    public double[] getValidDoubles() {
+    private double[] getTwoValidDoubles() {
         double[] validInputs = new double[2];
         boolean isInputValid = false;
         while (!isInputValid) {
@@ -34,9 +34,40 @@ public class HomeWorkSession3 {
         }
         return validInputs;
     }
-
+    private boolean getValidBool(){
+        boolean isInputValid = false;
+        boolean myBoolValue = false;
+        while(!isInputValid){
+            System.out.println("Please input a boolean value (True or False)");
+            String boolInputString = scanner.next();
+            if (boolInputString.equalsIgnoreCase("false")){
+                isInputValid = true;
+            } else if (boolInputString.equalsIgnoreCase("true")) {
+                myBoolValue = true;
+                isInputValid = true;
+            } else {
+                System.out.println(boolInputString + " is not a valid boolean value");
+            }
+        }
+        return myBoolValue;
+    }
+    private int getValidInt(){
+        int myNum = 0;
+        boolean isInputValid = false;
+        while (!isInputValid) {
+            System.out.println("Please input an integer.");
+            String myNumString = scanner.next();
+            try {
+                myNum = Integer.parseInt(myNumString);
+                isInputValid = true;
+            } catch (NumberFormatException exception) {
+                System.out.println(myNumString + " is not a valid integer.");
+            }
+        }
+        return myNum;
+    }
     public void exercise1() {
-        double[] validInputs = this.getValidDoubles();
+        double[] validInputs = this.getTwoValidDoubles();
         double firstNum = validInputs[0];
         double secondNum = validInputs[1];
         System.out.println("The result of the addition of the two numbers is " + (firstNum + secondNum));
@@ -56,18 +87,7 @@ public class HomeWorkSession3 {
     }
 
     public void exercise3() {
-        double myNum = 0;
-        boolean isInputValid = false;
-        while (!isInputValid) {
-            System.out.println("Please input a number.");
-            String myNumString = scanner.next();
-            try {
-                myNum = Double.parseDouble(myNumString);
-                isInputValid = true;
-            } catch (NumberFormatException exception) {
-                System.out.println(myNumString + " is not a valid number.");
-            }
-        }
+        int myNum = getValidInt();
         if (!(myNum == 0)) {
             System.out.println("The number is negative or positive.");
         } else {
@@ -95,7 +115,7 @@ public class HomeWorkSession3 {
     }
 
     public void exercise6() {
-        double[] validInputs = this.getValidDoubles();
+        double[] validInputs = this.getTwoValidDoubles();
         double firstNum = validInputs[0];
         double secondNum = validInputs[1];
         System.out.println("The statement that the first number is greater then the second is " +
@@ -157,16 +177,71 @@ public class HomeWorkSession3 {
     public void exercise9(){
         System.out.println("To calculate the area of a rectangle please input the the width as the first number" +
                 " and the height as the second number.");
-        double[] validInputs = this.getValidDoubles();
+        double[] validInputs = this.getTwoValidDoubles();
         double width = validInputs[0];
         double height = validInputs[1];
         System.out.println("The area of a rectangle with a width of " + width + " units and a height of " + height +
                 " units is equal to " + (height * width) + " square units.");
     }
-
+    public void exercise10(){
+        int myNum = getValidInt();
+        myNum = -myNum;
+        System.out.println("The reverse of your number is " + myNum);
+    }
+    public void exercise11(){
+        boolean firstBool = !getValidBool();
+        boolean secondBool = !getValidBool();
+        System.out.println("Your first boolean value was changed from " + !firstBool +
+                " to " + firstBool);
+        System.out.println("Your second boolean value was changed from " + !secondBool +
+                " to " + secondBool);
+    }
+    public void exercise12(){
+        int myInt = getValidInt();
+        System.out.println("After incrementing your integer has the value if " + ++myInt);
+        System.out.println("After decrementing your integer has the value if " + --myInt);
+    }
+    public void exercise13(){
+        boolean isInputValid = false;
+        double originalPrice = 0;
+        double discount = 0;
+        while (!isInputValid) {
+            System.out.println("Please input the original price of the item.");
+            String firstNumString = scanner.next();
+            try {
+                originalPrice = Double.parseDouble(firstNumString);
+                isInputValid = true;
+            } catch (NumberFormatException | NullPointerException exception) {
+                System.out.println(firstNumString + " is not a valid number.");
+            }
+        }
+        isInputValid = false;
+        while (!isInputValid) {
+            System.out.println("Please input the percentage of the discount.");
+            String firstNumString = scanner.next();
+            try {
+                discount = Integer.parseInt(firstNumString);
+                isInputValid = true;
+            } catch (NumberFormatException | NullPointerException exception) {
+                System.out.println(firstNumString + " is not a valid number.");
+            }
+        }
+        discount /= 100;
+        double finalPrice = originalPrice;
+        finalPrice -= originalPrice * discount;
+        System.out.println("The price of the item after discout is " + finalPrice);
+    }
+    public void exercise14(){
+        int myInt = getValidInt();
+        if ( 0 <= myInt && myInt <= 100){
+            System.out.println("The number " + myInt + " is in the range from 0 to 100 inclusive.");
+        } else {
+            System.out.println("The number " + myInt + " is not in the range from 0 to 100 inclusive.");
+        }
+    }
     public static void main(String[] args) {
 
         HomeWorkSession3 homeWork = new HomeWorkSession3();
-        homeWork.exercise9();
+        homeWork.exercise14();
     }
 }
