@@ -162,7 +162,6 @@ public class HomeWorkSession3 {
                 "by the value of myIntegerNumber, Java performs an implicit cast from double to int and " +
                 "myDoubleNumber becomes " + myDoubleNumber);
     }
-
     public void exercise8() {
         byte myFirstByteNum = 3;
         byte mySecondByteNum = 7;
