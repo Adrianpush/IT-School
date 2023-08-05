@@ -1,4 +1,4 @@
-package session3;
+package session3.Homework;
 
 import java.util.Scanner;
 
@@ -66,6 +66,10 @@ public class HomeWorkSession3 {
         }
         return myNum;
     }
+    /**
+     * Write a Java program to take two numbers as input
+     * and display the result of addition, subtraction, multiplication, division, and modulus.
+     */
     public void exercise1() {
         double[] validInputs = this.getTwoValidDoubles();
         double firstNum = validInputs[0];
@@ -76,6 +80,10 @@ public class HomeWorkSession3 {
         System.out.println("The result of the division of the two numbers is " + (firstNum / secondNum));
         System.out.println("The modulus of the two numbers is " + (firstNum % secondNum));
     }
+    /**
+     * Create a Java program where you increment and decrement the same variable.
+     * Display the value of the variable after each operation.
+     */
     public void exercise2() {
         int myNumber = 5;
         System.out.println("The value of myNumber is " + myNumber);
@@ -84,6 +92,9 @@ public class HomeWorkSession3 {
         myNumber--;
         System.out.println("After decrementing, the value of myNumber is " + myNumber);
     }
+    /**
+     * Write a program to check if a number is positive or negative using logical complement operator.
+     */
     public void exercise3() {
         int myNum = getValidInt();
         boolean isNotNegative = (myNum >= 0);
@@ -94,6 +105,10 @@ public class HomeWorkSession3 {
             System.out.println("The number is neither negative or zero.");
         }
     }
+    /**
+     * Write a Java program that uses both the increment (++) and decrement (--) operators
+     * in a loop to count up to 10 and then back down to 1.
+     */
     public void exercise4() {
         int myNum = 0;
         while (myNum < 10) {
@@ -103,6 +118,9 @@ public class HomeWorkSession3 {
             System.out.println("myNum is equal to " + --myNum);
         }
     }
+    /**
+     * Create a Java program that demonstrates the use of each compound assignment operator with integers.
+     */
     public void exercise5() {
         int firstNum = 5, secondNum = 3;
         firstNum += secondNum;
@@ -111,6 +129,11 @@ public class HomeWorkSession3 {
         firstNum /= secondNum;
         firstNum %= 2;
     }
+    /**
+     * Write a Java program that takes two numbers from the user
+     * and uses relational operators to display
+     * whether the first number is greater than, less than, or equal to the second number.
+     */
     public void exercise6() {
         double[] validInputs = this.getTwoValidDoubles();
         double firstNum = validInputs[0];
@@ -122,6 +145,9 @@ public class HomeWorkSession3 {
         System.out.println("The statement that the first number and second numbers are equal is " +
                 (firstNum == secondNum) + ".");
     }
+    /**
+     * Write a program where you perform operations between an integer and a double. Display the result.
+     */
     public void exercise7() {
         int myIntegerNumber = 7;
         double myDoubleNumber = 3.13;
@@ -160,6 +186,9 @@ public class HomeWorkSession3 {
                 "by the value of myIntegerNumber, Java performs an implicit cast from double to int and " +
                 "myDoubleNumber becomes " + myDoubleNumber);
     }
+    /**
+     * Create a program that takes two byte values, adds them together, and stores the result in a byte variable.
+     */
     public void exercise8() {
         byte myFirstByteNum = 3;
         byte mySecondByteNum = 7;
@@ -169,6 +198,9 @@ public class HomeWorkSession3 {
         myResult += mySecondByteNum;
         System.out.println(myResult);
     }
+    /**
+     * Write a program that calculates the area of a rectangle. Take the length and breadth as inputs.
+     */
     public void exercise9(){
         System.out.println("To calculate the area of a rectangle please input the the width as the first number" +
                 " and the height as the second number.");
@@ -178,11 +210,18 @@ public class HomeWorkSession3 {
         System.out.println("The area of a rectangle with a width of " + width + " units and a height of " + height +
                 " units is equal to " + (height * width) + " square units.");
     }
+    /**
+     * Write a program that reverses the sign of an entered integer using unary minus operator.
+     */
     public void exercise10(){
         int myNum = getValidInt();
         myNum = -myNum;
         System.out.println("The reverse of your number is " + myNum);
     }
+    /**
+     * Write a Java program that takes two boolean inputs from a user.
+     * Apply the logical negation operator (!) to each and print the result.
+     */
     public void exercise11(){
         boolean firstBool = !getValidBool();
         boolean secondBool = !getValidBool();
@@ -191,11 +230,20 @@ public class HomeWorkSession3 {
         System.out.println("Your second boolean value was changed from " + !secondBool +
                 " to " + secondBool);
     }
+    /**
+     * Create a program that takes an integer as input
+     * and then increments and decrements it by 1, displaying the output at each stage.
+     */
     public void exercise12(){
         int myInt = getValidInt();
         System.out.println("After incrementing your integer has the value if " + ++myInt);
         System.out.println("After decrementing your integer has the value if " + --myInt);
     }
+    /**
+     *  Write a program to calculate the price after discount.
+     *  Take the original price and discount percentage as input.
+     *  Use compound assignment operator to perform the calculation.
+     */
     public void exercise13(){
         boolean isInputValid = false;
         double originalPrice = 0;
@@ -226,6 +274,10 @@ public class HomeWorkSession3 {
         finalPrice -= originalPrice * discount;
         System.out.println("The price of the item after discount is " + finalPrice);
     }
+    /**
+     * Create a program that checks if a user entered number is within a specific range (e.g., 1-100).
+     * Use relational operators for the checks.
+     */
     public void exercise14(){
         int myInt = getValidInt();
         if ( 0 <= myInt && myInt <= 100){
@@ -234,6 +286,7 @@ public class HomeWorkSession3 {
             System.out.println("The number " + myInt + " is not in the range from 0 to 100 inclusive.");
         }
     }
+
     public static void main(String[] args) {
 
         HomeWorkSession3 homeWork = new HomeWorkSession3();

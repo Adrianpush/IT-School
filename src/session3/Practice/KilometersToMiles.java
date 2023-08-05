@@ -1,4 +1,4 @@
-package session3;
+package session3.Practice;
 
 public class KilometersToMiles {
 
