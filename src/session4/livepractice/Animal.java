@@ -6,7 +6,4 @@ public class Animal {
     private String colour;
     private double weight;
 
-    public static void main(String[] args) {
-
-    }
 }

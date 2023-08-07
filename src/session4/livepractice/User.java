@@ -8,7 +8,6 @@ public class User {
     private char sex;
     private String phone;
     private String email;
-
     public short getAge(){
         return age;
     }

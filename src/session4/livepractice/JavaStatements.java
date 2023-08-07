@@ -15,22 +15,23 @@ public class JavaStatements {
         }
 
         int num = 0;
-        if (num > 0 ) {
+        if (num > 0) {
             System.out.println("Number is positive.");
         } else if (num < 0) {
             System.out.println("Number is negative.");
         } else {
             System.out.println("Number is zero.");
         }
+
+        nestedStatements();
     }
-
-    public static void nestedStatements(){
+    public static void nestedStatements() {
         String name = "Ioana";
-        String city = "Cluj";
-        String sex = "f";
-        int age = 20;
+        String city = "B";
+        String sex = "b";
+        int age = 21;
 
-        if (city.equals("Cluj") && sex.equals("f") && age == 20){
+        if (city.equals("Cluj") && sex.equals("f") || age == 21) {
             System.out.println(name);
         }
     }

@@ -7,6 +7,5 @@ public class TernaryOperator {
         int secondScore = 200;
 
         String giytresult = firstScore > secondScore ? "First player won" : "Second player won.";
-        System.out.println(result);
     }
 }
