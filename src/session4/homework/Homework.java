@@ -77,7 +77,7 @@ public class Homework {
     }
 
     /**
-     * Write a Java program that determines the type of a triangle based on its sides.
+     * Write a Java program that determines the type of triangle based on its sides.
      * Declare three variables sideOne, sideTwo and sideThree to represent the sides of the triangle.
      * Use the ternary operator to determine and print whether the triangle is "Equilateral", "Isosceles", or "Scalene".
      */
