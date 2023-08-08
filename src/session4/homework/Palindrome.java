@@ -6,17 +6,31 @@ import java.util.List;
 public class Palindrome {
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome("aa???bbaa"));
-        System.out.println(isPalindrome("bb2345aa"));
-        System.out.println(isPalindrome("Sit on a potato pan, Otis"));
-        System.out.println(isPalindrome("Go hang a salami, I'm a lasagna hog."));
-        System.out.println(isPalindrome("Notmykindaoffirecracker."));
-        System.out.println("===================================");
-        System.out.println(isPalindromeEfficient("aa???bbaa"));
-        System.out.println(isPalindromeEfficient("bb2345aa"));
-        System.out.println(isPalindromeEfficient("Sit on a potato pan, Otis"));
-        System.out.println(isPalindromeEfficient("Go hang a salami, I'm a lasagna hog."));
-        System.out.println(isPalindromeEfficient("Notmykindaoffirecracker."));
+        List<String> stringList = getArrayOfStrings();
+
+        System.out.println("Running method isPalindrome.");
+        long startTime = System.currentTimeMillis();
+        for (String phrase : stringList) {
+            isPalindrome(phrase);
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println("Runtime is " + (endTime - startTime) + "ms.");
+
+        System.out.println("Running method isPalindromeEfficient.");
+        startTime = System.currentTimeMillis();
+        for (String phrase : stringList) {
+            isPalindromeEfficient(phrase);
+        }
+        endTime = System.currentTimeMillis();
+        System.out.println("Runtime is " + (endTime - startTime) + "ms.");
+
+        System.out.println("Running method isPalindromeVeryEfficient.");
+        startTime = System.currentTimeMillis();
+        for (String phrase : stringList) {
+            isPalindromeVeryEfficient(phrase);
+        }
+        endTime = System.currentTimeMillis();
+        System.out.println("Runtime is " + (endTime - startTime) + "ms.");
     }
 
     public static boolean isPalindrome(String stringToBeChecked) {
@@ -46,5 +60,254 @@ public class Palindrome {
             }
         }
         return true;
+    }
+
+    public static boolean isPalindromeVeryEfficient(String stringToBeChecked) {
+        int left = 0;
+        int right = stringToBeChecked.length() - 1;
+        char charAtLeft;
+        char charAtRight;
+
+        while (left < right) {
+            charAtLeft = Character.toLowerCase(stringToBeChecked.charAt(left));
+            if (charIsInvalid(charAtLeft)) {
+                left++;
+                continue;
+            }
+            charAtRight = Character.toLowerCase(stringToBeChecked.charAt(right));
+            if (charIsInvalid(charAtRight)) {
+                right--;
+                continue;
+            }
+            if (charAtLeft == charAtRight) {
+                left++;
+                right--;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean charIsInvalid(char charToBeChecked) {
+        String alphaNumericString = "abcdefghijklmnopqrstuvwxyz0123456789";
+        return alphaNumericString.indexOf(charToBeChecked) == -1;
+    }
+
+    public static List<String> getArrayOfStrings() {
+        List<String> stringArrayList = new ArrayList<>();
+        stringArrayList.add("aa???bbaa");
+        stringArrayList.add("bb2345aa");
+        stringArrayList.add("Sit on a potato pan, Otis");
+        stringArrayList.add("Go hang a salami, I'm a lasagna hog.");
+        stringArrayList.add("radar");
+        stringArrayList.add("hello");
+        stringArrayList.add("level");
+        stringArrayList.add("world");
+        stringArrayList.add("madam");
+        stringArrayList.add("openai");
+        stringArrayList.add("deified");
+        stringArrayList.add("programming");
+        stringArrayList.add("civic");
+        stringArrayList.add("arraylist");
+        stringArrayList.add("stats");
+        stringArrayList.add("algorithm");
+        stringArrayList.add("noon");
+        stringArrayList.add("computer");
+        stringArrayList.add("racecar");
+        stringArrayList.add("language");
+        stringArrayList.add("level");
+        stringArrayList.add("software");
+        stringArrayList.add("redivider");
+        stringArrayList.add("engineering");
+        stringArrayList.add("palindrome");
+        stringArrayList.add("repaper");
+        stringArrayList.add("science");
+        stringArrayList.add("step on no pets");
+        stringArrayList.add("developer");
+        stringArrayList.add("java");
+        stringArrayList.add("rotor");
+        stringArrayList.add("design");
+        stringArrayList.add("kayak");
+        stringArrayList.add("interface");
+        stringArrayList.add("stats");
+        stringArrayList.add("project");
+        stringArrayList.add("deleveled");
+        stringArrayList.add("computer");
+        stringArrayList.add("level");
+        stringArrayList.add("software");
+        stringArrayList.add("racecar");
+        stringArrayList.add("algorithm");
+        stringArrayList.add("noon");
+        stringArrayList.add("language");
+        stringArrayList.add("madam");
+        stringArrayList.add("civic");
+        stringArrayList.add("openai");
+        stringArrayList.add("hello");
+        stringArrayList.add("radar");
+        stringArrayList.add("world");
+        stringArrayList.add("redivider");
+        stringArrayList.add("engineering");
+        stringArrayList.add("palindrome");
+        stringArrayList.add("aa???bbaa");
+        stringArrayList.add("bb2345aa");
+        stringArrayList.add("Sit on a potato pan, Otis");
+        stringArrayList.add("Go hang a salami, I'm a lasagna hog.");
+        stringArrayList.add("radar");
+        stringArrayList.add("hello");
+        stringArrayList.add("level");
+        stringArrayList.add("world");
+        stringArrayList.add("madam");
+        stringArrayList.add("openai");
+        stringArrayList.add("deified");
+        stringArrayList.add("programming");
+        stringArrayList.add("civic");
+        stringArrayList.add("arraylist");
+        stringArrayList.add("stats");
+        stringArrayList.add("algorithm");
+        stringArrayList.add("noon");
+        stringArrayList.add("computer");
+        stringArrayList.add("racecar");
+        stringArrayList.add("language");
+        stringArrayList.add("level");
+        stringArrayList.add("software");
+        stringArrayList.add("redivider");
+        stringArrayList.add("engineering");
+        stringArrayList.add("palindrome");
+        stringArrayList.add("repaper");
+        stringArrayList.add("science");
+        stringArrayList.add("step on no pets");
+        stringArrayList.add("developer");
+        stringArrayList.add("java");
+        stringArrayList.add("rotor");
+        stringArrayList.add("design");
+        stringArrayList.add("kayak");
+        stringArrayList.add("interface");
+        stringArrayList.add("stats");
+        stringArrayList.add("project");
+        stringArrayList.add("deleveled");
+        stringArrayList.add("computer");
+        stringArrayList.add("level");
+        stringArrayList.add("software");
+        stringArrayList.add("racecar");
+        stringArrayList.add("algorithm");
+        stringArrayList.add("noon");
+        stringArrayList.add("language");
+        stringArrayList.add("madam");
+        stringArrayList.add("civic");
+        stringArrayList.add("openai");
+        stringArrayList.add("hello");
+        stringArrayList.add("radar");
+        stringArrayList.add("world");
+        stringArrayList.add("redivider");
+        stringArrayList.add("engineering");
+        stringArrayList.add("palindrome");
+        stringArrayList.add("aa???bbaa");
+        stringArrayList.add("bb2345aa");
+        stringArrayList.add("Sit on a potato pan, Otis");
+        stringArrayList.add("Go hang a salami, I'm a lasagna hog.");
+        stringArrayList.add("radar");
+        stringArrayList.add("hello");
+        stringArrayList.add("level");
+        stringArrayList.add("world");
+        stringArrayList.add("madam");
+        stringArrayList.add("openai");
+        stringArrayList.add("deified");
+        stringArrayList.add("programming");
+        stringArrayList.add("civic");
+        stringArrayList.add("arraylist");
+        stringArrayList.add("stats");
+        stringArrayList.add("algorithm");
+        stringArrayList.add("noon");
+        stringArrayList.add("computer");
+        stringArrayList.add("racecar");
+        stringArrayList.add("language");
+        stringArrayList.add("level");
+        stringArrayList.add("software");
+        stringArrayList.add("redivider");
+        stringArrayList.add("engineering");
+        stringArrayList.add("palindrome");
+        stringArrayList.add("repaper");
+        stringArrayList.add("science");
+        stringArrayList.add("step on no pets");
+        stringArrayList.add("developer");
+        stringArrayList.add("java");
+        stringArrayList.add("rotor");
+        stringArrayList.add("design");
+        stringArrayList.add("kayak");
+        stringArrayList.add("interface");
+        stringArrayList.add("stats");
+        stringArrayList.add("project");
+        stringArrayList.add("deleveled");
+        stringArrayList.add("computer");
+        stringArrayList.add("level");
+        stringArrayList.add("software");
+        stringArrayList.add("racecar");
+        stringArrayList.add("algorithm");
+        stringArrayList.add("noon");
+        stringArrayList.add("language");
+        stringArrayList.add("madam");
+        stringArrayList.add("civic");
+        stringArrayList.add("openai");
+        stringArrayList.add("hello");
+        stringArrayList.add("radar");
+        stringArrayList.add("world");
+        stringArrayList.add("redivider");
+        stringArrayList.add("engineering");
+        stringArrayList.add("palindrome");
+        stringArrayList.add("aa???bbaa");
+        stringArrayList.add("bb2345aa");
+        stringArrayList.add("Sit on a potato pan, Otis");
+        stringArrayList.add("Go hang a salami, I'm a lasagna hog.");
+        stringArrayList.add("radar");
+        stringArrayList.add("hello");
+        stringArrayList.add("level");
+        stringArrayList.add("world");
+        stringArrayList.add("madam");
+        stringArrayList.add("openai");
+        stringArrayList.add("deified");
+        stringArrayList.add("programming");
+        stringArrayList.add("civic");
+        stringArrayList.add("arraylist");
+        stringArrayList.add("stats");
+        stringArrayList.add("algorithm");
+        stringArrayList.add("noon");
+        stringArrayList.add("computer");
+        stringArrayList.add("racecar");
+        stringArrayList.add("language");
+        stringArrayList.add("level");
+        stringArrayList.add("software");
+        stringArrayList.add("redivider");
+        stringArrayList.add("engineering");
+        stringArrayList.add("palindrome");
+        stringArrayList.add("repaper");
+        stringArrayList.add("science");
+        stringArrayList.add("step on no pets");
+        stringArrayList.add("developer");
+        stringArrayList.add("java");
+        stringArrayList.add("rotor");
+        stringArrayList.add("design");
+        stringArrayList.add("kayak");
+        stringArrayList.add("interface");
+        stringArrayList.add("stats");
+        stringArrayList.add("project");
+        stringArrayList.add("deleveled");
+        stringArrayList.add("computer");
+        stringArrayList.add("level");
+        stringArrayList.add("software");
+        stringArrayList.add("racecar");
+        stringArrayList.add("algorithm");
+        stringArrayList.add("noon");
+        stringArrayList.add("language");
+        stringArrayList.add("madam");
+        stringArrayList.add("civic");
+        stringArrayList.add("openai");
+        stringArrayList.add("hello");
+        stringArrayList.add("radar");
+        stringArrayList.add("world");
+        stringArrayList.add("redivider");
+        stringArrayList.add("engineering");
+        stringArrayList.add("palindrome");
+        return stringArrayList;
     }
 }
