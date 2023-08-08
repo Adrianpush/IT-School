@@ -2,8 +2,6 @@ package session4.homework;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Palindrome {
 
@@ -33,11 +31,12 @@ public class Palindrome {
         }
         return true;
     }
-    public static boolean isPalindromeEfficient(String stringToBeChecked){
+
+    public static boolean isPalindromeEfficient(String stringToBeChecked) {
         String alphaNumericString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         List<Character> charList = new ArrayList<>();
-        for (char character : stringToBeChecked.toCharArray())  {
-            if (alphaNumericString.indexOf(character) > -1){
+        for (char character : stringToBeChecked.toCharArray()) {
+            if (alphaNumericString.indexOf(character) > -1) {
                 charList.add(Character.toLowerCase(character));
             }
         }
