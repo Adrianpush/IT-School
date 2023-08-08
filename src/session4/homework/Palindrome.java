@@ -15,7 +15,7 @@ public class Palindrome {
         stringToBeChecked = stringToBeChecked.toLowerCase();
         int lenString = stringToBeChecked.length();
         int halfLen = lenString / 2;
-        for (int i = 0; i <= halfLen; i++) {
+        for (int i = 0; i < halfLen; i++) {
             if (stringToBeChecked.charAt(i) != stringToBeChecked.charAt(lenString - (i + 1))) {
                 return false;
             }
