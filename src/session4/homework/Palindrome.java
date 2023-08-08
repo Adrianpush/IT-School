@@ -6,7 +6,7 @@ import java.util.List;
 public class Palindrome {
 
     public static void main(String[] args) {
-        List<String> stringList = getArrayOfStrings();
+        List<String> stringList = getListOfStrings();
 
         System.out.println("Running method isPalindrome.");
         long startTime = System.currentTimeMillis();
@@ -94,7 +94,7 @@ public class Palindrome {
         return alphaNumericString.indexOf(charToBeChecked) == -1;
     }
 
-    public static List<String> getArrayOfStrings() {
+    public static List<String> getListOfStrings() {
         List<String> stringArrayList = new ArrayList<>();
         stringArrayList.add("aa???bbaa");
         stringArrayList.add("bb2345aa");
