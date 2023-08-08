@@ -3,7 +3,7 @@ package session4.homework;
 public class Homework {
 
     public static void main(String[] args) {
-        boolean isAdult = isAdultAccordingTo(20);
+        boolean isAdult = isAdultAccordingToAge(20);
         int maxHeight = determineMaxHeight(190, 188);
         printAllNumbersTo(10);
         printAllEvenNumbersTo(10);
@@ -17,7 +17,7 @@ public class Homework {
      * Print a statement saying "I am adult" if age is 18 or more,
      * else print "I am not an adult".
      */
-    public static boolean isAdultAccordingTo(int age) {
+    public static boolean isAdultAccordingToAge(int age) {
         String message = age > 17 ? "I am an adult." : "A-gu-gu-goo!";
         System.out.println(message);
         return age > 17;
@@ -30,7 +30,8 @@ public class Homework {
      */
     public static int determineMaxHeight(int heightOne, int heightTwo) {
         int maxHeight = heightTwo > heightOne ? heightTwo : heightOne;
-        System.out.println("The bigger of the two heights is " + maxHeight + ".");
+        System.out.println("The bigger of the two heights (" + heightOne + ", " + heightTwo +
+                ") is " + maxHeight + ".");
         return maxHeight;
     }
 
