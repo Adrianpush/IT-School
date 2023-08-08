@@ -1,5 +1,10 @@
 package session4.homework;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Palindrome {
 
     public static void main(String[] args) {
@@ -8,6 +13,12 @@ public class Palindrome {
         System.out.println(isPalindrome("Sit on a potato pan, Otis"));
         System.out.println(isPalindrome("Go hang a salami, I'm a lasagna hog."));
         System.out.println(isPalindrome("Notmykindaoffirecracker."));
+        System.out.println("===================================");
+        System.out.println(isPalindromeEfficient("aa???bbaa"));
+        System.out.println(isPalindromeEfficient("bb2345aa"));
+        System.out.println(isPalindromeEfficient("Sit on a potato pan, Otis"));
+        System.out.println(isPalindromeEfficient("Go hang a salami, I'm a lasagna hog."));
+        System.out.println(isPalindromeEfficient("Notmykindaoffirecracker."));
     }
 
     public static boolean isPalindrome(String stringToBeChecked) {
@@ -15,8 +26,23 @@ public class Palindrome {
         stringToBeChecked = stringToBeChecked.toLowerCase();
         int lenString = stringToBeChecked.length();
         int halfLen = lenString / 2;
-        for (int i = 0; i <= halfLen; i++) {
+        for (int i = 0; i < halfLen; i++) {
             if (stringToBeChecked.charAt(i) != stringToBeChecked.charAt(lenString - (i + 1))) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean isPalindromeEfficient(String stringToBeChecked){
+        String alphaNumericString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        List<Character> charList = new ArrayList<>();
+        for (char character : stringToBeChecked.toCharArray())  {
+            if (alphaNumericString.indexOf(character) > -1){
+                charList.add(Character.toLowerCase(character));
+            }
+        }
+        for (int i = 0; i < (charList.size() / 2); i++) {
+            if (!charList.get(i).equals(charList.get(charList.size() - 1 - i))) {
                 return false;
             }
         }
