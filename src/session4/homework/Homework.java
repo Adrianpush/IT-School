@@ -48,12 +48,14 @@ public class Homework {
      * Print only the even numbers from 1 to 10.
      */
     public static void printAllEvenNumbersTo(int num) {
-        // Not efficient
-        // for (int index = 2; index <=num; index++){
-        //     if (index % 2 == 0){
-        //         System.out.println(index);
-        //     }
-        // }
+        /*
+         Not efficient
+         for (int index = 2; index <=num; index++){
+             if (index % 2 == 0){
+                 System.out.println(index);
+             }
+         }
+         */
         for (int index = 2; index <= num; index += 2) {
             System.out.println(index);
         }
