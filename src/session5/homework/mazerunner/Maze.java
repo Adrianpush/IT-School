@@ -8,21 +8,25 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Maze {
-
     private HashMap<String, int[]> moves;
     private char[][] maze2DArray;
     private int rowCount;
     private int columnCount;
 
     public Maze(char[][] mazeBlueprint) {
-        maze2DArray = mazeBlueprint;
-        rowCount = mazeBlueprint.length;
-        columnCount = mazeBlueprint[0].length;
-        moves = new HashMap<>();
-        moves.put("North", new int[]{0, -1});
-        moves.put("South", new int[]{0, 1});
-        moves.put("East", new int[]{1, 0});
-        moves.put("West", new int[]{-1, 0});
+        if (isMazeRectangle(mazeBlueprint)) {
+            maze2DArray = mazeBlueprint;
+            rowCount = mazeBlueprint.length;
+            columnCount = mazeBlueprint[0].length;
+            moves = new HashMap<>();
+            moves.put("North", new int[]{0, -1});
+            moves.put("South", new int[]{0, 1});
+            moves.put("East", new int[]{1, 0});
+            moves.put("West", new int[]{-1, 0});
+        } else {
+            System.out.println("Maze is not a rectangle.");
+        }
+
     }
 
     public Maze(String fileName) {
@@ -43,15 +47,18 @@ public class Maze {
             for (int index = 0; index < mazeBlueprint.length; index++) {
                 mazeBlueprint[index] = mazeFromFile.get(index);
             }
-            maze2DArray = mazeBlueprint;
-
-            moves = new HashMap<>();
-            moves.put("North", new int[]{0, -1});
-            moves.put("South", new int[]{0, 1});
-            moves.put("East", new int[]{1, 0});
-            moves.put("West", new int[]{-1, 0});
-            columnCount = mazeColumnCount;
-            rowCount = mazeRowCount;
+            if (isMazeRectangle(mazeBlueprint)) {
+                maze2DArray = mazeBlueprint;
+                moves = new HashMap<>();
+                moves.put("North", new int[]{0, -1});
+                moves.put("South", new int[]{0, 1});
+                moves.put("East", new int[]{1, 0});
+                moves.put("West", new int[]{-1, 0});
+                columnCount = mazeColumnCount;
+                rowCount = mazeRowCount;
+            } else {
+                System.out.println("Maze is not a rectangle.");
+            }
         } catch (FileNotFoundException fileNotFoundException) {
             System.out.println("File not found.");
         }
@@ -92,6 +99,16 @@ public class Maze {
             }
         }
         return validMoves;
+    }
+
+    private boolean isMazeRectangle(char[][] mazeBlueprint) {
+        int rowLength = mazeBlueprint[0].length;
+        for (char[] chars : mazeBlueprint) {
+            if (chars.length != rowLength) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private boolean isInsideMaze(Location location) {
