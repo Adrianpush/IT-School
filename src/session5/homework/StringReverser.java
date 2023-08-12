@@ -6,6 +6,10 @@ public class StringReverser {
         System.out.println(getReversedString(UserInput.getStringInput("Enter string to be reversed.")));
     }
 
+    /**
+     * Ask the user to enter a string.
+     * Print the reversed version of this string.
+     */
     public static String getReversedString(String input) {
         char[] reversedStringCharArray = new char[input.length()];
         int charArrayIndex = 0;

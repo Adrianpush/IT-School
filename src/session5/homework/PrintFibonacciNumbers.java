@@ -7,6 +7,10 @@ public class PrintFibonacciNumbers {
                 " would you like to print? \n"));
     }
 
+    /**
+     * Write a program that generates and prints the first n numbers of the Fibonacci series,
+     * where n is provided by the user.
+     */
     public static void printFibonacciNumbers(int upperBound) {
         long beforePrevious = 0;
         long previous = 1;

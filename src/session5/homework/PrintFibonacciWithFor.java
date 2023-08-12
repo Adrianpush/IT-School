@@ -6,6 +6,10 @@ public class PrintFibonacciWithFor {
         printFirstTenFibonacciNumbers();
     }
 
+    /**
+     * Write a program that prints the first 10 numbers in the Fibonacci series.
+     * Use a for loop to accomplish this.
+     */
     public static void printFirstTenFibonacciNumbers() {
         int beforePrevious = 0;
         int previous = 1;

@@ -6,6 +6,10 @@ public class MonthNameFinder {
         printMonth(UserInput.getValidInt("Please enter the the number of the month... \n"));
     }
 
+    /**
+     * Write a program that asks the user to enter a number between 1 and 12.
+     * Print the name of the corresponding month or "Invalid Month" if out of range.
+     */
     public static void printMonth(int input) {
         String message = "";
         switch (input) {

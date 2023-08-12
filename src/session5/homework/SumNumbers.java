@@ -2,6 +2,11 @@ package session5.homework;
 
 public class SumNumbers {
 
+    /**
+     * Write a program that asks the user to enter numbers.
+     * The program should continue prompting the user until they enter -1.
+     * After they enter -1, print the sum of all numbers entered (excluding -1).
+     */
     public static void main(String[] args) {
         boolean isRunning = true;
         int sum = 0;

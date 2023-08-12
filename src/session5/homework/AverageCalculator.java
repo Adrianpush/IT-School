@@ -2,6 +2,11 @@ package session5.homework;
 
 public class AverageCalculator {
 
+    /**
+     * Write a program that prompts the user to enter numbers.
+     * Calculate the average of these numbers.
+     * If the user enters 0, break out of the input loop and then print the average of the numbers entered so far.
+     */
     public static void main(String[] args) {
         double average = 0;
         int numbersCount = 0;

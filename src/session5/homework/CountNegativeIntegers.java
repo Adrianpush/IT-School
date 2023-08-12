@@ -7,6 +7,9 @@ public class CountNegativeIntegers {
         printNegativeNumbers(integerArray);
     }
 
+    /**
+     * Given an array of integers, write a program to count and print the number of negative integers in the array.
+     */
     public static int printNegativeNumbers(int[] inputArray) {
         int negativeNumbersCount = 0;
         for (int number : inputArray) {

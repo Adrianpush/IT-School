@@ -7,6 +7,11 @@ public class OddOrEven {
         isEven(6);
     }
 
+    /**
+     * Write a Java program that takes an integer as input.
+     * If the number is even, print "Even".
+     * If it's odd, print "Odd".
+     */
     public static boolean isEven(int input) {
         boolean isEven = input % 2 == 0;
         String message = isEven ? "The number " + input + " is even." :

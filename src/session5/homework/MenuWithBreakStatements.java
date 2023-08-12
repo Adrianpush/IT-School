@@ -1,7 +1,15 @@
 package session5.homework;
 
 public class MenuWithBreakStatements {
-
+    /**
+     * Create a menu-driven program where the user is presented with options:
+     * Print "Hello World"
+     * Print the user's name.
+     * Exit.
+     * Based on the user's input, perform the necessary action.
+     * Once an action is completed, show the menu again, unless the user chooses the Exit option.
+     * Use jump statements to control the flow of the program.
+     */
     public static void main(String[] args) {
         String userName = UserInput.getStringInput("What is your username?");
         String greeting = "Hello, world!";
