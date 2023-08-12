@@ -14,7 +14,7 @@ public class MazeRunner {
         maze = mazeToSolve;
         for (int xCoord = 0; xCoord < maze.getColumnCount(); xCoord++) {
             for (int yCoord = 0; yCoord < maze.getRowCount(); yCoord++) {
-                if (maze.getElementAtLocation(new Location(xCoord, yCoord)) == 'S') {
+                if (maze.getCharAtLocation(new Location(xCoord, yCoord)) == 'S') {
                     startLocation = new Location(xCoord, yCoord);
                 }
             }
@@ -25,20 +25,12 @@ public class MazeRunner {
         List<Location> currentLocation = new ArrayList<>();
         currentLocation.add(startLocation);
         int shortestPathLength = getShortestPathLengthWithBFS(0, currentLocation);
-
         if (shortestPathLength == -1) {
             return "This maze cannot be solved.";
         } else {
             List<Location> shortestPath = getShortestPathWithDFS(shortestPathLength, startLocation,
                     new ArrayList<>(), new HashSet<>());
-            int count = 0;
-            String message = "";
-            for (Location loc : shortestPath) {
-                String step = count + ". (" + loc.getXCoordinate() + "." + loc.getYCoordinate() + ")\n";
-                message = message.concat(step);
-                count++;
-            }
-            return message;
+            return pathToString(shortestPath);
         }
     }
 
@@ -48,7 +40,7 @@ public class MazeRunner {
         for (Location startingLocation : startingLocations) {
             List<Location> possibleDestinations = maze.getValidMoves(startingLocation);
             for (Location possibleDestination : possibleDestinations) {
-                if (maze.getElementAtLocation(possibleDestination) == 'E') {
+                if (maze.getCharAtLocation(possibleDestination) == 'E') {
                     return moveCount;
                 } else if (!visited.contains(possibleDestination)) {
                     destinations.add(possibleDestination);
@@ -67,7 +59,7 @@ public class MazeRunner {
         path.add(currentLocation);
         visited.add(currentLocation);
         moves--;
-        if (maze.getElementAtLocation(currentLocation) == 'E') {
+        if (maze.getCharAtLocation(currentLocation) == 'E') {
             return path;
         }
         if (moves >= 0) {
@@ -83,5 +75,16 @@ public class MazeRunner {
             }
         }
         return new ArrayList<>();
+    }
+
+    private String pathToString(List<Location> path) {
+        int stepCount = 0;
+        String message = "";
+        for (Location location : path) {
+            String step = stepCount + ". (" + location.getXCoordinate() + "." + location.getYCoordinate() + ")\n";
+            message = message.concat(step);
+            stepCount++;
+        }
+        return message;
     }
 }

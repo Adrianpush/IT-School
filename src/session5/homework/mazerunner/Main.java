@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         char[][] mazeBlueprint = {{'S', '0', '0'}, {'0', '0', '0'}, {'0', '0', '0'}, {'1', '1', 'E'}};
         Maze mazeFromCharArray = new Maze(mazeBlueprint);
-        if (mazeFromCharArray.getRowCount() == 0){
+        if (mazeFromCharArray.getRowCount() == 0) {
             System.out.println("Maze not successfully initialized");
         } else {
             mazeFromCharArray.printMaze();
@@ -14,7 +14,7 @@ public class Main {
         }
 
         Maze mazeFromFile = new Maze("src/session5/homework/mazerunner/maze.txt");
-        if (mazeFromFile.getRowCount() == 0){
+        if (mazeFromFile.getRowCount() == 0) {
             System.out.println("Maze not successfully initialized");
         } else {
             mazeFromFile.printMaze();

@@ -26,7 +26,6 @@ public class Maze {
         } else {
             System.out.println("Maze is not a rectangle.");
         }
-
     }
 
     public Maze(String fileName) {
@@ -72,7 +71,7 @@ public class Maze {
         return columnCount;
     }
 
-    public char getElementAtLocation(Location location) {
+    public char getCharAtLocation(Location location) {
         return maze2DArray[location.getYCoordinate()][location.getXCoordinate()];
     }
 
@@ -88,13 +87,12 @@ public class Maze {
     public List<Location> getValidMoves(Location location) {
         List<Location> validMoves = new ArrayList<>();
         for (int[] move : moves.values()) {
-            Location tempLocation = new Location(location.getXCoordinate() + move[0],
+            Location possibleLocation = new Location(location.getXCoordinate() + move[0],
                     location.getYCoordinate() + move[1]);
-
-            if (isInsideMaze(tempLocation)) {
-                char tempLocationChar = getElementAtLocation(tempLocation);
-                if (tempLocationChar == '0' || tempLocationChar == 'E') {
-                    validMoves.add(tempLocation);
+            if (isInsideMaze(possibleLocation)) {
+                char possibleLocationChar = getCharAtLocation(possibleLocation);
+                if (possibleLocationChar == '0' || possibleLocationChar == 'E') {
+                    validMoves.add(possibleLocation);
                 }
             }
         }
