@@ -12,8 +12,8 @@ public class MazeRunner {
 
     public MazeRunner(Maze mazeToSolve) {
         maze = mazeToSolve;
-        for (int xCoord = 0; xCoord < maze.getLength(); xCoord++) {
-            for (int yCoord = 0; yCoord < maze.getLength(); yCoord++) {
+        for (int xCoord = 0; xCoord < maze.getColumnCount(); xCoord++) {
+            for (int yCoord = 0; yCoord < maze.getRowCount(); yCoord++) {
                 if (maze.getElementAtLocation(new Location(xCoord, yCoord)) == 'S') {
                     startLocation = new Location(xCoord, yCoord);
                 }
@@ -62,8 +62,8 @@ public class MazeRunner {
         return getShortestPathLengthWithBFS(moveCount, destinations);
     }
 
-    private List<Location> getShortestPathWithDFS(int moves, Location currentLocation,
-                                                  List<Location> path, Set<Location> visited) {
+    private List<Location> getShortestPathWithDFS(
+            int moves, Location currentLocation, List<Location> path, Set<Location> visited) {
         path.add(currentLocation);
         visited.add(currentLocation);
         moves--;

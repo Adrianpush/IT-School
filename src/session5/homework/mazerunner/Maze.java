@@ -11,11 +11,13 @@ public class Maze {
 
     private HashMap<String, int[]> moves;
     private char[][] maze2DArray;
-    private int length;
+    private int rowCount;
+    private int columnCount;
 
     public Maze(char[][] mazeBlueprint) {
         maze2DArray = mazeBlueprint;
-        length = mazeBlueprint.length;
+        rowCount = mazeBlueprint.length;
+        columnCount = mazeBlueprint[0].length;
         moves = new HashMap<>();
         moves.put("North", new int[]{0, -1});
         moves.put("South", new int[]{0, 1});
@@ -28,29 +30,39 @@ public class Maze {
             File mazeFile = new File(fileName);
             Scanner fileReader = new Scanner(mazeFile);
             List<char[]> mazeFromFile = new ArrayList<>();
+            int mazeRowCount = 0;
+            int mazeColumnCount = 0;
             while (fileReader.hasNextLine()) {
                 String data = fileReader.nextLine();
                 mazeFromFile.add(data.toCharArray());
+                mazeRowCount++;
             }
             fileReader.close();
-            char[][] mazeBlueprint = new char[mazeFromFile.size()][mazeFromFile.size()];
+            mazeColumnCount = mazeFromFile.get(0).length;
+            char[][] mazeBlueprint = new char[mazeRowCount][mazeColumnCount];
             for (int index = 0; index < mazeBlueprint.length; index++) {
                 mazeBlueprint[index] = mazeFromFile.get(index);
             }
             maze2DArray = mazeBlueprint;
+
             moves = new HashMap<>();
             moves.put("North", new int[]{0, -1});
             moves.put("South", new int[]{0, 1});
             moves.put("East", new int[]{1, 0});
             moves.put("West", new int[]{-1, 0});
-            length = mazeBlueprint.length;
+            columnCount = mazeColumnCount;
+            rowCount = mazeRowCount;
         } catch (FileNotFoundException fileNotFoundException) {
-            System.out.println("FIle not found.");
+            System.out.println("File not found.");
         }
     }
 
-    public int getLength() {
-        return length;
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public int getColumnCount() {
+        return columnCount;
     }
 
     public char getElementAtLocation(Location location) {
@@ -58,9 +70,9 @@ public class Maze {
     }
 
     public void printMaze() {
-        for (int yPosition = 0; yPosition < maze2DArray.length; yPosition++) {
-            for (int xPosition = 0; xPosition < maze2DArray[yPosition].length; xPosition++) {
-                System.out.print(maze2DArray[yPosition][xPosition]);
+        for (char[] chars : maze2DArray) {
+            for (char aChar : chars) {
+                System.out.print(aChar);
             }
             System.out.println();
         }
@@ -83,7 +95,7 @@ public class Maze {
     }
 
     private boolean isInsideMaze(Location location) {
-        return (location.getXCoordinate() >= 0 && location.getXCoordinate() < maze2DArray.length &&
-                location.getYCoordinate() >= 0 && location.getYCoordinate() < maze2DArray.length);
+        return (location.getXCoordinate() >= 0 && location.getXCoordinate() < columnCount &&
+                location.getYCoordinate() >= 0 && location.getYCoordinate() < rowCount);
     }
 }
