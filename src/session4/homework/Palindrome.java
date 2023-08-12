@@ -70,16 +70,12 @@ public class Palindrome {
 
         while (left < right) {
             charAtLeft = Character.toLowerCase(stringToBeChecked.charAt(left));
+            charAtRight = Character.toLowerCase(stringToBeChecked.charAt(right));
             if (charIsInvalid(charAtLeft)) {
                 left++;
-                continue;
-            }
-            charAtRight = Character.toLowerCase(stringToBeChecked.charAt(right));
-            if (charIsInvalid(charAtRight)) {
+            } else if (charIsInvalid(charAtRight)) {
                 right--;
-                continue;
-            }
-            if (charAtLeft == charAtRight) {
+            } else if (charAtLeft == charAtRight) {
                 left++;
                 right--;
             } else {
