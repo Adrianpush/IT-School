@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         //Maze from char[][]
-        char[][] mazeBlueprint = {{'S', '0', '0'}, {'0', '0', '0'}, {'0', '0', '0'}, {'1', '1', 'E'}};
+        char[][] mazeBlueprint = {{'0', '0', '0', '0', '0', '0', 'S', '0', '0'}, {'0', '0', '0'},
+                {'0', '0', '0', '0', '0'}, {'1','E', '1'}};
         try {
             Maze mazeFromCharArray = new Maze(mazeBlueprint);
             MazeRunner mazeRunner1 = new MazeRunner(mazeFromCharArray);

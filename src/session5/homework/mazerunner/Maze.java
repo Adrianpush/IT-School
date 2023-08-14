@@ -83,7 +83,7 @@ public class Maze {
         printMaze();
         for (Location location : path) {
             if (maze2DArray[location.getYCoordinate()][location.getXCoordinate()] == '0') {
-                maze2DArray[location.getYCoordinate()][location.getXCoordinate()] = 'X';
+                maze2DArray[location.getYCoordinate()][location.getXCoordinate()] = '*';
             }
         }
         System.out.println("Solved Maze");
