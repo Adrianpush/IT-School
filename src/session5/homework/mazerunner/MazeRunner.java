@@ -12,13 +12,7 @@ public class MazeRunner {
 
     public MazeRunner(Maze mazeToSolve) {
         maze = mazeToSolve;
-        for (int xCoord = 0; xCoord < maze.getColumnCount(); xCoord++) {
-            for (int yCoord = 0; yCoord < maze.getRowCount(); yCoord++) {
-                if (maze.getCharAtLocation(new Location(xCoord, yCoord)) == 'S') {
-                    startLocation = new Location(xCoord, yCoord);
-                }
-            }
-        }
+        startLocation = mazeToSolve.getStartLocation();
     }
 
     public String solveMaze() {
@@ -26,11 +20,13 @@ public class MazeRunner {
         currentLocation.add(startLocation);
         int shortestPathLength = getShortestPathLengthWithBFS(0, currentLocation);
         if (shortestPathLength == -1) {
-            return "This maze cannot be solved.";
+            return "Maze cannot be solved.";
         } else {
             List<Location> shortestPath = getShortestPathWithDFS(shortestPathLength, startLocation,
                     new ArrayList<>(), new HashSet<>());
-            return pathToString(shortestPath);
+            String steps = pathToString(shortestPath);
+            maze.printShortestPath(shortestPath);
+            return steps;
         }
     }
 

@@ -10,17 +10,14 @@ import java.util.Scanner;
 public class Maze {
     private List<int[]> moves;
     private char[][] maze2DArray;
-    private int rowCount;
-    private int columnCount;
+    private Location startLocation;
 
     public Maze(char[][] mazeBlueprint) throws InstantiationException {
         if (isMazeValid(mazeBlueprint)) {
             maze2DArray = mazeBlueprint;
-            rowCount = mazeBlueprint.length;
-            columnCount = mazeBlueprint[0].length;
             setMoves();
         } else {
-            throw new InstantiationException("Maze is not valid.");
+            throw new InstantiationException("Maze doesn't contain start point.");
         }
     }
 
@@ -45,10 +42,8 @@ public class Maze {
         if (isMazeValid(mazeBlueprint)) {
             maze2DArray = mazeBlueprint;
             setMoves();
-            columnCount = mazeFromFile.get(0).length;
-            rowCount = mazeFromFile.size();
         } else {
-            throw new InstantiationException("Maze is not valid.");
+            throw new InstantiationException("Maze doesn't contain start point.");
         }
     }
 
@@ -63,32 +58,36 @@ public class Maze {
 
         }
         mazeBlueprint[rand.nextInt(numRows)][rand.nextInt(numColumns)] = 'E';
-        mazeBlueprint[rand.nextInt(numRows)][rand.nextInt(numColumns)] = 'S';
+        int startLocationX = rand.nextInt(numColumns);
+        int startLocationY = rand.nextInt(numRows);
+        mazeBlueprint[startLocationY][startLocationX] = 'S';
         maze2DArray = mazeBlueprint;
         setMoves();
-        columnCount = numColumns;
-        rowCount = numRows;
-    }
-
-    public int getRowCount() {
-        return rowCount;
-    }
-
-    public int getColumnCount() {
-        return columnCount;
+        setStartLocation(new Location(startLocationX, startLocationY));
     }
 
     public char getCharAtLocation(Location location) {
         return maze2DArray[location.getYCoordinate()][location.getXCoordinate()];
     }
 
-    public void printMaze() {
-        for (char[] chars : maze2DArray) {
-            for (char aChar : chars) {
-                System.out.print(aChar);
+    public Location getStartLocation() {
+        return startLocation;
+    }
+
+    private void setStartLocation(Location location) {
+        startLocation = location;
+    }
+
+    public void printShortestPath(List<Location> path) {
+        System.out.println("Initial Maze");
+        printMaze();
+        for (Location location : path) {
+            if (maze2DArray[location.getYCoordinate()][location.getXCoordinate()] == '0') {
+                maze2DArray[location.getYCoordinate()][location.getXCoordinate()] = 'X';
             }
-            System.out.println();
         }
+        System.out.println("Solved Maze");
+        printMaze();
     }
 
     public List<Location> getValidMoves(Location location) {
@@ -116,26 +115,31 @@ public class Maze {
     }
 
     private boolean isMazeValid(char[][] mazeBlueprint) {
-        int rowLength = mazeBlueprint[0].length;
-        boolean startPointFound = false;
-        for (char[] chars : mazeBlueprint) {
-            if (chars.length != rowLength) {
-                return false;
-            }
-            if (!startPointFound) {
-                for (char aChar : chars) {
-                    if (aChar == 'S') {
-                        startPointFound = true;
-                        break;
-                    }
+        boolean isStartPointFound = false;
+        for (int rowIndex = 0; rowIndex < mazeBlueprint.length; rowIndex++) {
+            for (int columnIndex = 0; columnIndex < mazeBlueprint[rowIndex].length; columnIndex++) {
+                if (mazeBlueprint[rowIndex][columnIndex] == 'S') {
+                    isStartPointFound = true;
+                    setStartLocation(new Location(columnIndex, rowIndex));
                 }
             }
         }
-        return true;
+        return isStartPointFound;
     }
 
     private boolean isInsideMaze(Location location) {
-        return (location.getXCoordinate() >= 0 && location.getXCoordinate() < columnCount &&
-                location.getYCoordinate() >= 0 && location.getYCoordinate() < rowCount);
+        return (location.getYCoordinate() >= 0 && location.getYCoordinate() < maze2DArray.length
+                && location.getXCoordinate() >= 0 &&
+                location.getXCoordinate() < maze2DArray[location.getYCoordinate()].length
+        );
+    }
+
+    private void printMaze() {
+        for (char[] chars : maze2DArray) {
+            for (char aChar : chars) {
+                System.out.print(aChar);
+            }
+            System.out.println();
+        }
     }
 }
