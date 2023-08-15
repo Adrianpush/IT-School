@@ -1,5 +1,6 @@
 package session6.homework;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class StringBuilderCustomClass {
@@ -87,6 +88,107 @@ public class StringBuilderCustomClass {
         for (int index = 0; index + windowSize < originalString.length(); index++) {
             if (stringBuilder.substring(index, index + windowSize).equals(oldSubstring)) {
                 stringBuilder.replace(index, index + windowSize, newSubstring);
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    /**
+     * Duplicate Character Remover
+     * Description: Design a program using StringBuilder that removes duplicate characters from a string.
+     * For example, "balloon" should become "balon".
+     */
+    public static String duplicateCharacterRemover(String input) {
+        if (input.isEmpty()) {
+            return input;
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(input.charAt(0));
+        for (int index = 1; index < input.length(); index++) {
+            char currentChar = input.charAt(index);
+            if (!(stringBuilder.charAt(stringBuilder.length() - 1) == currentChar)) {
+                stringBuilder.append(currentChar);
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    /**
+     * Inserting at Index
+     * Description: Write a Java program that inserts a given string into another string
+     * at a specified index using the StringBuilder class.
+     */
+    public static String insertAtIndex(String hostString, String stringToBeInserted, int index) {
+        if (index > hostString.length()) {
+            index = hostString.length();
+        }
+        StringBuilder stringBuilder = new StringBuilder(hostString);
+        stringBuilder.insert(index, stringToBeInserted);
+        return stringBuilder.toString();
+    }
+
+    /**
+     * Frequency Counter
+     * Description: Using StringBuilder, write a program that counts the frequency of each character in a string.
+     */
+    public static String charFrequencyCounter(String input) {
+        StringBuilder stringBuilder = new StringBuilder(input);
+        HashMap<Character, Integer> counter = new HashMap<>();
+        for (int index = 0; index < stringBuilder.length(); index++) {
+            char currentChar = input.charAt(index);
+            if (counter.containsKey(currentChar)) {
+                counter.put(currentChar, counter.get(currentChar) + 1);
+            } else {
+                counter.put(currentChar, 1);
+            }
+        }
+        return counter.toString();
+    }
+
+    /**
+     * Morse Code Converter
+     * Description: Create a program that takes in a string
+     * and converts it to Morse code using the StringBuilder class.
+     * For simplicity, you can assume the input string only contains alphabets and numbers.
+     */
+    public static String morseCodeConverter(String input) {
+        StringBuilder stringBuilder = new StringBuilder();
+        input = input.toUpperCase();
+        HashMap<Character, String> morseCodeMap = new HashMap<>();
+        morseCodeMap.put('A', ".-");
+        morseCodeMap.put('B', "-...");
+        morseCodeMap.put('C', "-.-.");
+        morseCodeMap.put('D', "-..");
+        morseCodeMap.put('E', ".");
+        morseCodeMap.put('F', "..-.");
+        morseCodeMap.put('G', "--.");
+        morseCodeMap.put('H', "....");
+        morseCodeMap.put('I', "..");
+        morseCodeMap.put('J', ".---");
+        morseCodeMap.put('K', "-.-");
+        morseCodeMap.put('L', ".-..");
+        morseCodeMap.put('M', "--");
+        morseCodeMap.put('N', "-.");
+        morseCodeMap.put('O', "---");
+        morseCodeMap.put('P', ".--.");
+        morseCodeMap.put('Q', "--.-");
+        morseCodeMap.put('R', ".-.");
+        morseCodeMap.put('S', "...");
+        morseCodeMap.put('T', "-");
+        morseCodeMap.put('U', "..-");
+        morseCodeMap.put('V', "...-");
+        morseCodeMap.put('W', ".--");
+        morseCodeMap.put('X', "-..-");
+        morseCodeMap.put('Y', "-.--");
+        morseCodeMap.put('Z', "--..");
+
+        for (int index = 0; index < input.length(); index++) {
+            char currentChar = input.charAt(index);
+            if (morseCodeMap.containsKey(currentChar)){
+                stringBuilder.append(morseCodeMap.get(currentChar));
+                if (index != input.length() -1){
+                    stringBuilder.append(' ');
+                }
             }
         }
         return stringBuilder.toString();
