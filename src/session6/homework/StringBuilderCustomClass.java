@@ -106,7 +106,7 @@ public class StringBuilderCustomClass {
         stringBuilder.append(input.charAt(0));
         for (int index = 1; index < input.length(); index++) {
             char currentChar = input.charAt(index);
-            if (!(stringBuilder.charAt(stringBuilder.length() - 1) == currentChar)) {
+            if ((stringBuilder.charAt(stringBuilder.length() - 1) != currentChar)) {
                 stringBuilder.append(currentChar);
             }
         }
@@ -184,13 +184,86 @@ public class StringBuilderCustomClass {
 
         for (int index = 0; index < input.length(); index++) {
             char currentChar = input.charAt(index);
-            if (morseCodeMap.containsKey(currentChar)){
+            if (morseCodeMap.containsKey(currentChar)) {
                 stringBuilder.append(morseCodeMap.get(currentChar));
-                if (index != input.length() -1){
+                if (index != input.length() - 1) {
                     stringBuilder.append(' ');
                 }
             }
         }
         return stringBuilder.toString();
     }
+
+    /**
+     * Encode and Decode using Caesar Cipher
+     * Description: Implement a Caesar Cipher encoder and decoder using the StringBuilder class.
+     * The Caesar Cipher involves rotating letters a certain number of steps down or up the alphabet.
+     * For example, with a shift of 1, 'A' would be replaced by 'B', 'B' would become 'C', and so on.
+     */
+    public static String encodeCaesarCipher(String input, int offset) {
+        StringBuilder stringBuilder = new StringBuilder();
+        offset = offset % 26;
+        for (int index = 0; index < input.length(); index++) {
+            char currentChar = input.charAt(index);
+            if ((currentChar >= 65 && currentChar <= 90)) {
+                currentChar = (char) ((currentChar + offset > 90) ? currentChar + offset - 26 : currentChar + offset);
+            } else if (currentChar >= 97 && currentChar <= 122) {
+                currentChar = (char) ((currentChar + offset > 122) ? currentChar + offset - 26 : currentChar + offset);
+            }
+            stringBuilder.append(currentChar);
+        }
+        return stringBuilder.toString();
+    }
+
+    public static String decodeCaesarCipher(String input, int offset) {
+        StringBuilder stringBuilder = new StringBuilder();
+        offset = offset % 26;
+        for (int index = 0; index < input.length(); index++) {
+            char currentChar = input.charAt(index);
+            if ((currentChar >= 65 && currentChar <= 90)) {
+                currentChar = (char) ((currentChar - offset < 65) ? currentChar - offset + 26 : currentChar - offset);
+            } else if (currentChar >= 97 && currentChar <= 122) {
+                currentChar = (char) ((currentChar - offset < 97) ? currentChar - offset + 26 : currentChar - offset);
+            }
+            stringBuilder.append(currentChar);
+        }
+        return stringBuilder.toString();
+    }
+
+    /**
+     * CamelCase to Snake_case Converter
+     * Description: Write a program using StringBuilder to convert a given CamelCase string to snake_case.
+     * For instance, "thisIsCamelCase" would become "this_is_camel_case".
+     */
+    public static String snakeCaseToCamelCase(String input) {
+        StringBuilder stringBuilder = new StringBuilder();
+        boolean shouldCapitalize = false;
+        for (int index = 0; index < input.length(); index++) {
+            char currentChar = input.charAt(index);
+            if (currentChar == '_') {
+                shouldCapitalize = true;
+            } else if (shouldCapitalize) {
+                shouldCapitalize = false;
+                stringBuilder.append(Character.toUpperCase(currentChar));
+            } else {
+                stringBuilder.append(currentChar);
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    public static String camelCaseToSnakeCase(String input) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int index = 0; index < input.length(); index++) {
+            char currentChar = input.charAt(index);
+            if (Character.isUpperCase(currentChar)) {
+                stringBuilder.append('_');
+                stringBuilder.append(Character.toLowerCase(currentChar));
+            } else {
+                stringBuilder.append(currentChar);
+            }
+        }
+        return stringBuilder.toString();
+    }
+
 }

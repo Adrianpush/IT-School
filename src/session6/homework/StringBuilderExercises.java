@@ -25,5 +25,9 @@ public class StringBuilderExercises {
                 " Belzebut ", 14));
         System.out.println(StringBuilderCustomClass.charFrequencyCounter("Article translations are expensive."));
         System.out.println(StringBuilderCustomClass.morseCodeConverter("Hello, world!"));
+        System.out.println(StringBuilderCustomClass.encodeCaesarCipher("Glory to Rome! ZZzzzZZ", 5));
+        System.out.println(StringBuilderCustomClass.decodeCaesarCipher("Lqtwd yt Wtrj! EEeeeEE", 5));
+        System.out.println(StringBuilderCustomClass.snakeCaseToCamelCase("this_is_camel_case"));
+        System.out.println(StringBuilderCustomClass.camelCaseToSnakeCase("thisIsSnakeCase"));
     }
 }
