@@ -1,5 +1,6 @@
 package session6.homework;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -398,6 +399,46 @@ public class StringBuilderCustomClass {
         stringBuilder.append(inputOne.substring(smallerString.length()));
         stringBuilder.append(inputTwo.substring(smallerString.length()));
         return stringBuilder.toString();
+    }
+
+    /**
+     * Pattern Recognition
+     * Description: Design a Java program using StringBuilder that checks if a given pattern repeats in a string.
+     * For instance, given the string "ababab", the repeating pattern is "ab".
+     */
+    public static String findPattern(String input){
+        HashMap<String, Integer> patternCount = new HashMap<>();
+        for (int windowSize = 2; windowSize < input.length(); windowSize++){
+            int index = 0;
+            while (index + windowSize < input.length()){
+                String currentWindow = input.substring(index, index + windowSize);
+                if (patternCount.containsKey(currentWindow)){
+                    patternCount.put(currentWindow, patternCount.get(currentWindow) + 1);
+                } else {
+                    patternCount.put(currentWindow, 1);
+                }
+                index += windowSize;
+            }
+        }
+        String longestRepeatingString = "";
+        int frequencyOfLongestRepeatingString = 2;
+        String mostRepeatedString = "";
+        int frequencyOfMostRepeatedString = 1;
+        for (HashMap.Entry<String, Integer> entry : patternCount.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            if (key.length() >= longestRepeatingString.length() && value >= 2){
+                longestRepeatingString = key;
+                frequencyOfLongestRepeatingString = value;
+            }
+            if (value > frequencyOfMostRepeatedString){
+                mostRepeatedString = key;
+                frequencyOfMostRepeatedString = value;
+            }
+        }
+        return "The longest repeating string is " + longestRepeatingString + " which repeats " +
+                frequencyOfLongestRepeatingString + " times. The most repeated string is " + mostRepeatedString +
+                " which repeats " + frequencyOfMostRepeatedString + " times.";
     }
 
 }
