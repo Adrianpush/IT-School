@@ -29,5 +29,14 @@ public class StringBuilderExercises {
         System.out.println(StringBuilderCustomClass.decodeCaesarCipher("Lqtwd yt Wtrj! EEeeeEE", 5));
         System.out.println(StringBuilderCustomClass.snakeCaseToCamelCase("this_is_camel_case"));
         System.out.println(StringBuilderCustomClass.camelCaseToSnakeCase("thisIsSnakeCase"));
+        System.out.println(StringBuilderCustomClass.expandCompressedString("a22bc5"));
+        System.out.println(StringBuilderCustomClass.removeComments("aaa//aaaaaaaaa\na"));
+        System.out.println(StringBuilderCustomClass.removeComments("a/**aa//aaa/*aaaaaa\na*/a"));
+        System.out.println(StringBuilderCustomClass.areAnagrams("aabba", "baaab"));
+        System.out.println(StringBuilderCustomClass.areAnagrams("caabba", "baaab"));
+        System.out.println(StringBuilderCustomClass.areAnagrams("caabba", "baacab"));
+        System.out.println(StringBuilderCustomClass.toggleCase("Hello MofO"));
+
+        System.out.println(StringBuilderCustomClass.interweaveStrings("aaaaaaaaaaa", "11111"));
     }
 }

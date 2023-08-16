@@ -266,4 +266,138 @@ public class StringBuilderCustomClass {
         return stringBuilder.toString();
     }
 
+    /**
+     * Expand Compressed Strings
+     * Description: Given a compressed string like "a3b2c4",
+     * expand it to "aaabbc", making use of the StringBuilder class.
+     */
+    public static String expandCompressedString(String input) {
+        StringBuilder stringBuilder = new StringBuilder();
+        int index = 0;
+        StringBuilder stringMultiplier = new StringBuilder();
+        while (index < input.length()) {
+            char currentChar = input.charAt(index);
+            if (Character.isAlphabetic(currentChar)) {
+                if (!stringMultiplier.isEmpty()) {
+                    int multiplier = Integer.parseInt(stringMultiplier.toString());
+                    stringMultiplier.setLength(0);
+                    char lastCharAppended = stringBuilder.charAt(stringBuilder.length() - 1);
+                    for (int iteration = 1; iteration < multiplier; iteration++) {
+                        stringBuilder.append(lastCharAppended);
+                    }
+                } else {
+                    stringBuilder.append(currentChar);
+                    index++;
+                }
+            } else {
+                stringMultiplier.append(currentChar);
+                index++;
+            }
+        }
+        if (!stringMultiplier.isEmpty()) {
+            int multiplier = Integer.parseInt(stringMultiplier.toString());
+            char lastCharAppended = stringBuilder.charAt(stringBuilder.length() - 1);
+            for (int iteration = 1; iteration < multiplier; iteration++) {
+                stringBuilder.append(lastCharAppended);
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    /**
+     * Remove Comments from Code
+     * Description: Create a Java program using StringBuilder that removes all single line and multi-line
+     * comments from a provided piece of code.
+     **/
+    public static String removeComments(String code) {
+        if (code.length() < 3) {
+            return code;
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        boolean isBlockCommentOpen = false;
+        boolean isLineCommentOpen = false;
+        int index = 0;
+        while (index < code.length() - 1) {
+            String window = code.substring(index, index + 2);
+            if (!isBlockCommentOpen && !isLineCommentOpen) {
+                if (window.equals("/*")) {
+                    isBlockCommentOpen = true;
+                } else if (window.equals("//")) {
+                    isLineCommentOpen = true;
+                } else {
+                    stringBuilder.append(code.charAt(index));
+                }
+                index++;
+            } else if (isBlockCommentOpen && window.equals("*/")) {
+                isBlockCommentOpen = false;
+                index += 2;
+            } else if (isLineCommentOpen && code.charAt(index) == '\n') {
+                isLineCommentOpen = false;
+                index++;
+            } else {
+                index++;
+            }
+        }
+        if (!isBlockCommentOpen && !isLineCommentOpen) {
+            stringBuilder.append(code.charAt(code.length() - 1));
+        }
+            return stringBuilder.toString();
+    }
+
+    /**
+     * Anagram Checker
+     * Description: Develop a program that checks if two provided strings are anagrams of each other
+     * using the StringBuilder class.
+     * Anagrams are words or phrases made up of the same characters.
+     **/
+    public static boolean areAnagrams(String phraseOne, String phraseTwo){
+        StringBuilder stringBuilderPhraseOne = new StringBuilder(phraseOne);
+        StringBuilder stringBuilderPhraseTwo = new StringBuilder(phraseTwo);
+        for (int index = 0; index < phraseOne.length(); index++){
+            String currentChar = Character.toString(phraseOne.charAt(index));
+            int posInPhraseOne = stringBuilderPhraseOne.indexOf(currentChar);
+            int posInPhraseTwo = stringBuilderPhraseTwo.indexOf(currentChar);
+            if (posInPhraseOne < 0 || posInPhraseTwo < 0){
+                return false;
+            }
+            stringBuilderPhraseOne.deleteCharAt(posInPhraseOne);
+            stringBuilderPhraseTwo.deleteCharAt(posInPhraseTwo);
+        }
+        return (stringBuilderPhraseOne.isEmpty() && stringBuilderPhraseTwo.isEmpty());
+    }
+
+    /**
+     * Toggling Case
+     * Description: Design a program using StringBuilder that toggles the case of every character in a given string.
+     * For example, "HelLo" should become "hELlO".
+     **/
+    public static String toggleCase(String input){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int index = 0; index < input.length(); index++){
+            char currentChar = input.charAt(index);
+            if (Character.isUpperCase(currentChar)){
+                stringBuilder.append(Character.toLowerCase(currentChar));
+            } else {
+                stringBuilder.append(Character.toUpperCase(currentChar));
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    /**
+     * Description: Write a program using StringBuilder that interleaves two strings.
+     * For instance, given "abc" and "123", the result should be "a1b2c3".
+     **/
+    public static String interweaveStrings(String inputOne, String inputTwo){
+        StringBuilder stringBuilder = new StringBuilder();
+        String smallerString = (inputOne.length() > inputTwo.length()) ? inputTwo : inputOne;
+        for (int index = 0; index < smallerString.length(); index++){
+            stringBuilder.append(inputOne.charAt(index));
+            stringBuilder.append(inputTwo.charAt(index));
+        }
+        stringBuilder.append(inputOne.substring(smallerString.length()));
+        stringBuilder.append(inputTwo.substring(smallerString.length()));
+        return stringBuilder.toString();
+    }
+
 }
