@@ -495,4 +495,17 @@ public class StringBuilderCustomClass {
         return stringBuilder.isEmpty();
     }
 
+    public static String intToRoman(int number){
+        StringBuilder stringBuilder = new StringBuilder();
+        String[] roman = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+
+        for (int index = 0; index < roman.length; index++){
+            while (number >= values[index]) {
+                number -= values[index];
+                stringBuilder.append(roman[index]);
+            }
+        }
+        return stringBuilder.toString();
+    }
 }

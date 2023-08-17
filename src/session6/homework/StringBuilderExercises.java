@@ -62,6 +62,8 @@ public class StringBuilderExercises {
         System.out.println(StringBuilderCustomClass.areParenthesisBalanced("{[aa)](dd}ff"));
         System.out.println(StringBuilderCustomClass.areParenthesisBalanced("[2(a+b)+ (2+2)] * 5"));
 
+        System.out.println(StringBuilderCustomClass.intToRoman(3844));
+
 
     }
 }
