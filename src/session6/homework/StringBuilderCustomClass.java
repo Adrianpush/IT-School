@@ -1,6 +1,5 @@
 package session6.homework;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -283,9 +282,7 @@ public class StringBuilderCustomClass {
                     int multiplier = Integer.parseInt(stringMultiplier.toString());
                     stringMultiplier.setLength(0);
                     char lastCharAppended = stringBuilder.charAt(stringBuilder.length() - 1);
-                    for (int iteration = 1; iteration < multiplier; iteration++) {
-                        stringBuilder.append(lastCharAppended);
-                    }
+                    stringBuilder.append(String.valueOf(lastCharAppended).repeat(Math.max(0, multiplier - 1)));
                 } else {
                     stringBuilder.append(currentChar);
                     index++;
@@ -298,9 +295,7 @@ public class StringBuilderCustomClass {
         if (!stringMultiplier.isEmpty()) {
             int multiplier = Integer.parseInt(stringMultiplier.toString());
             char lastCharAppended = stringBuilder.charAt(stringBuilder.length() - 1);
-            for (int iteration = 1; iteration < multiplier; iteration++) {
-                stringBuilder.append(lastCharAppended);
-            }
+            stringBuilder.append(String.valueOf(lastCharAppended).repeat(Math.max(0, multiplier - 1)));
         }
         return stringBuilder.toString();
     }
