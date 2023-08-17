@@ -8,7 +8,7 @@ public class PrimeNumberFinder {
             long startTime = System.currentTimeMillis();
             if (isPrime(number)){
                 long endTime = System.currentTimeMillis();
-                System.out.println(number + " " + (endTime - startTime));
+                System.out.println(number + " was found in " + (endTime - startTime) + "ms.");
             }
         }
     }
