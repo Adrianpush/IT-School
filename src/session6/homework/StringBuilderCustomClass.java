@@ -347,19 +347,20 @@ public class StringBuilderCustomClass {
      * Anagrams are words or phrases made up of the same characters.
      **/
     public static boolean areAnagrams(String phraseOne, String phraseTwo){
-        StringBuilder stringBuilderPhraseOne = new StringBuilder(phraseOne);
+        if (phraseOne.length() != phraseTwo.length()){
+            return false;
+        }
         StringBuilder stringBuilderPhraseTwo = new StringBuilder(phraseTwo);
         for (int index = 0; index < phraseOne.length(); index++){
-            String currentChar = Character.toString(phraseOne.charAt(index));
-            int posInPhraseOne = stringBuilderPhraseOne.indexOf(currentChar);
-            int posInPhraseTwo = stringBuilderPhraseTwo.indexOf(currentChar);
-            if (posInPhraseOne < 0 || posInPhraseTwo < 0){
+
+            char currentChar = phraseOne.charAt(index);
+            int posInPhraseTwo = stringBuilderPhraseTwo.indexOf(Character.toString(currentChar));
+            if (posInPhraseTwo < 0){
                 return false;
             }
-            stringBuilderPhraseOne.deleteCharAt(posInPhraseOne);
             stringBuilderPhraseTwo.deleteCharAt(posInPhraseTwo);
         }
-        return (stringBuilderPhraseOne.isEmpty() && stringBuilderPhraseTwo.isEmpty());
+        return stringBuilderPhraseTwo.isEmpty();
     }
 
     /**
