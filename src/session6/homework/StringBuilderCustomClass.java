@@ -335,7 +335,7 @@ public class StringBuilderCustomClass {
             }
         }
         if (!isBlockCommentOpen && !isLineCommentOpen) {
-            stringBuilder.append(code.charAt(code.length() - 1));
+            stringBuilder.append(code.substring(index));
         }
             return stringBuilder.toString();
     }
@@ -434,6 +434,65 @@ public class StringBuilderCustomClass {
         return "The longest repeating string is " + longestRepeatingString + " which repeats " +
                 frequencyOfLongestRepeatingString + " times. The most repeated string is " + mostRepeatedString +
                 " which repeats " + frequencyOfMostRepeatedString + " times.";
+    }
+    /**
+     * Encode Strings with Run-Length Encoding (RLE)
+     * Description: Using StringBuilder, write a program that implements the Run-Length Encoding algorithm.
+     * For instance, the string "AAABBBCCDAA" would be encoded as "3A3B2C1D2A".
+     */
+    public static String encodeRLE(String input){
+        if (input.isEmpty()){
+            return input;
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        char lastChar = input.charAt(0);
+        int lastCharIncidence = 1;
+        for (int index = 1; index < input.length(); index++){
+            if (input.charAt(index) != lastChar){
+                stringBuilder.append(lastCharIncidence);
+                stringBuilder.append(lastChar);
+                lastChar = input.charAt(index);
+                lastCharIncidence = 1;
+            } else {
+                lastCharIncidence++;
+            }
+        }
+        stringBuilder.append(lastCharIncidence);
+        stringBuilder.append(lastChar);
+        return stringBuilder.toString();
+    }
+
+    /**
+     * Balanced Parenthesis Checker
+     * Description: Develop a program that checks
+     * if a string has balanced parentheses ((, ), {, }, [, and ]) using StringBuilder.
+     * The program should return true if the parentheses
+     * in the string are balanced and false otherwise.
+     */
+    public static boolean areParenthesisBalanced(String input){
+        StringBuilder stringBuilder = new StringBuilder();
+        HashMap<Character, Character> parenthesisPairs = new HashMap<>();
+        parenthesisPairs.put('(', ')');
+        parenthesisPairs.put('{', '}');
+        parenthesisPairs.put('[', ']');
+
+        for (int index = 0; index < input.length(); index++){
+            char currentChar = input.charAt(index);
+            if (parenthesisPairs.containsKey(currentChar)){
+                stringBuilder.append(currentChar);
+            } else if (parenthesisPairs.containsValue(currentChar)){
+                if (stringBuilder.isEmpty()){
+                    return false;
+                }
+                char lastParenthesisOpened = stringBuilder.charAt(stringBuilder.length() -1);
+                if (parenthesisPairs.get(lastParenthesisOpened) == currentChar){
+                    stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+                } else {
+                    return false;
+                }
+            }
+        }
+        return stringBuilder.isEmpty();
     }
 
 }

@@ -43,8 +43,8 @@ public class StringBuilderExercises {
 
         System.out.println(StringBuilderCustomClass.expandCompressedString("a22bc5"));
 
-        System.out.println(StringBuilderCustomClass.removeComments("aaa//aaaaaaaaa\na"));
-        System.out.println(StringBuilderCustomClass.removeComments("a/**aa//aaa/*aaaaaa\na*///a\na"));
+        System.out.println(StringBuilderCustomClass.removeComments("aaa//aaaaaaaaa\nba"));
+        System.out.println(StringBuilderCustomClass.removeComments("a/**aa//aaa/*aaaaaa\na*///a\nb"));
 
         System.out.println(StringBuilderCustomClass.areAnagrams("aabba", "baaab"));
         System.out.println(StringBuilderCustomClass.areAnagrams("caabba", "baaab"));
@@ -55,5 +55,13 @@ public class StringBuilderExercises {
         System.out.println(StringBuilderCustomClass.interweaveStrings("aaaaaaaaaaa", "11111"));
 
         System.out.println(StringBuilderCustomClass.findPattern("ABABABABABABA"));
+
+        System.out.println(StringBuilderCustomClass.encodeRLE("aaabbc3333ddddd"));
+
+        System.out.println(StringBuilderCustomClass.areParenthesisBalanced("{[](a)}"));
+        System.out.println(StringBuilderCustomClass.areParenthesisBalanced("{[aa)](dd}ff"));
+        System.out.println(StringBuilderCustomClass.areParenthesisBalanced("[2(a+b)+ (2+2)] * 5"));
+
+
     }
 }
