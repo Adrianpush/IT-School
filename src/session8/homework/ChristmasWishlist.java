@@ -13,9 +13,10 @@ public class ChristmasWishlist {
         wishlist.add("Rum");
         wishlist.add("Eye patch");
         wishlist.add("Wooden Leg");
+        printList(wishlist);
+    }
 
-        System.out.println(wishlist);
-
+    public static void printList(List<String> wishlist) {
         StringBuilder stringBuilder = new StringBuilder();
         for (String item : wishlist) {
             stringBuilder.append(item + ", ");
