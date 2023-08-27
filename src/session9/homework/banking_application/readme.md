@@ -26,7 +26,8 @@ Explanation
   bank account.
 - In order to get the recent transactions 3 overloaded methods exist. One receives two LocalDateTime objects called
   start and end and returns a list of all transactions between those datetimes(exclusive). One receives a single
-  LocalDateTime Object and returns all the transactions that happened after that moment. The third receives an int
+  LocalDateTime Object and returns all the transactions that happened after that moment. Binary search could be
+  implemented to speed up the retrieval time (not in the scope of this exercise). The third receives an int
   number and returns the last number of transactions (if the amount of transactions requested is at least equal to
   amount of transactions stored on account.)
 - In order to see the balance of an account, a getter for balance was implemented.
