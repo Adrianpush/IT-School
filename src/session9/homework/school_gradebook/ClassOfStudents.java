@@ -1,4 +1,4 @@
-package session9.homework.SchoolGradebook;
+package session9.homework.school_gradebook;
 
 import java.util.ArrayList;
 import java.util.List;

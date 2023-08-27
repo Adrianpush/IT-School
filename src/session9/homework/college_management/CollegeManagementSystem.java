@@ -1,4 +1,4 @@
-package session9.homework.CollegeManagement;
+package session9.homework.college_management;
 
 import java.time.LocalDate;
 

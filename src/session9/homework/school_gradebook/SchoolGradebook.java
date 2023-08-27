@@ -1,4 +1,4 @@
-package session9.homework.SchoolGradebook;
+package session9.homework.school_gradebook;
 
 public class SchoolGradebook {
 
