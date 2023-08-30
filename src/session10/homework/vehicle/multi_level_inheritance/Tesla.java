@@ -1,4 +1,4 @@
-package session10.homework.vehicle.cars;
+package session10.homework.vehicle.multi_level_inheritance;
 
 public class Tesla extends ElectricCar {
 

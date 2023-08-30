@@ -8,14 +8,14 @@ public class Animal {
         this.name = name;
     }
 
-    public void eat(){
+    public void eat() {
         System.out.println("This animal is eating.");
     }
 }
 
 class Mammal extends Animal {
 
-    public Mammal(String name){
+    public Mammal(String name) {
         super(name);
     }
 
@@ -25,7 +25,7 @@ class Mammal extends Animal {
     }
 }
 
-class Bird extends Animal{
+class Bird extends Animal {
 
     public Bird(String name) {
         super(name);

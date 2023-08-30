@@ -11,20 +11,10 @@ class Shape {
     }
 }
 
-class Parallelogram extends Shape{
+class Parallelogram extends Shape {
 
 }
 
 class Rectangle extends Shape {
 
 }
-
-//class Square extends Parallelogram, Rectangle {
-//
-//    public static void main(String[] args) {
-//        Parallelogram parallelogram = new Parallelogram();
-//        parallelogram.setArea();
-//
-//    }
-//
-//}

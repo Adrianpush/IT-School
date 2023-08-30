@@ -1,4 +1,4 @@
-package session10.homework.vehicle.boats;
+package session10.homework.vehicle.hierarchical_inheritance;
 
 public class FishingBoat extends Boat {
 

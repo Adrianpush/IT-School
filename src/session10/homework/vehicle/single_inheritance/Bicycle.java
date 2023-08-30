@@ -1,9 +1,11 @@
-package session10.homework.vehicle.bicycles;
+package session10.homework.vehicle.single_inheritance;
 
 public class Bicycle {
 
     int speed;
     int gear;
+    final int ACCELERATION = 2;
+    final int BREAKING_POWER = 5;
 
     public Bicycle() {
         this.speed = 0;
@@ -11,13 +13,13 @@ public class Bicycle {
     }
 
     public void speedUp() {
-        this.speed += 2;
+        speed += ACCELERATION;
     }
 
     public void brake() {
-        if (this.speed > 5) {
-            this.speed -= 5;
-        } else if (this.speed > 0) {
+        if (this.speed >= BREAKING_POWER) {
+            this.speed -= BREAKING_POWER;
+        } else {
             this.speed = 0;
         }
     }

@@ -1,11 +1,12 @@
-package session10.homework.vehicle.cars;
+package session10.homework.vehicle.multi_level_inheritance;
 
 import java.time.LocalDate;
 
 public class Car {
-    String make;
+
+    String manufacturer;
     String model;
-    LocalDate year;
+    LocalDate productionYear;
 
     public void start() {
         System.out.println("Car is starting.");

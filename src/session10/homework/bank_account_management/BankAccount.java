@@ -4,14 +4,17 @@ import java.util.UUID;
 
 public class BankAccount {
 
-    String accountHolderName;
+    String accountHolderFirstName;
+    String accountHolderLastName;
     UUID accountNumber;
     double balance;
+    final double zero = 0;
 
-    public BankAccount(String accountHolderName) {
-        this.accountHolderName = accountHolderName;
+    public BankAccount(String accountHolderFirstName, String accountHolderLastName) {
+        this.accountHolderFirstName = accountHolderFirstName;
+        this.accountHolderLastName = accountHolderLastName;
         this.accountNumber = UUID.randomUUID();
-        this.balance = 0;
+        this.balance = zero;
     }
 
     public double getBalance() {
@@ -19,18 +22,18 @@ public class BankAccount {
     }
 
     public String getAccountDetails() {
-        return "Account holder name: " + accountHolderName + "\n" +
+        return "Account holder name: " + accountHolderFirstName + " " + accountHolderLastName +  "\n" +
                 "Account number: " + accountNumber;
     }
 
     public void deposit(double amount) {
-        if (amount > 0) {
+        if (amount > zero) {
             this.balance += amount;
         }
     }
 
     public void withdraw(double amount) {
-        if (amount > 0) {
+        if (amount > zero) {
             if (balance >= amount) {
                 balance -= amount;
             } else {
@@ -40,7 +43,7 @@ public class BankAccount {
     }
 
     public void transferFunds(BankAccount targetAccount, double amount) {
-        if (amount > 0 && amount <= balance) {
+        if (amount > zero && amount <= balance) {
             this.withdraw(amount);
             targetAccount.deposit(amount);
         }

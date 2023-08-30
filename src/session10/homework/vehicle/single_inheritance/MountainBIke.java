@@ -1,4 +1,4 @@
-package session10.homework.vehicle.bicycles;
+package session10.homework.vehicle.single_inheritance;
 
 public class MountainBIke extends Bicycle{
 

@@ -1,4 +1,4 @@
-package session10.homework.animal;
+package session10.homework.single_inheritance;
 
 public class Wolf extends Animal{
 

@@ -1,4 +1,4 @@
-package session10.homework.animal;
+package session10.homework.single_inheritance;
 
 public class Animal {
 
@@ -8,7 +8,7 @@ public class Animal {
         this.name = name;
     }
 
-    public void sound(){
+    public void sound() {
         System.out.println("animal makes sounds");
     }
 }
