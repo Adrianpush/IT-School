@@ -1,9 +1,84 @@
-<mxfile host="app.diagrams.net" modified="2023-09-01T09:31:50.305Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0" version="21.7.1" etag="9f1qSfSlqrk9oWV_N77_" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-01T14:10:55.576Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0" etag="ONSkrLnd_j5r5WO3egB8" version="21.7.1" type="github">
   <diagram name="Page-1" id="9rA9lKoRtjfUEAICKigl">
-    <mxGraphModel>
+    <mxGraphModel dx="1247" dy="1780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-3" value="&lt;div&gt;Abstract Class Device&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-4" value="&lt;div&gt;deviceName&lt;/div&gt;&lt;div&gt;deviceLocation&lt;/div&gt;&lt;div&gt;nextRevisionData&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;install()&lt;/div&gt;&lt;div&gt;uninstall()&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="360" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-5" value="Device Interfaces" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-6" value="&lt;div&gt;NightMode&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;lowLightMode()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;silentMode()&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="630" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-7" value="&lt;div&gt;PowerSavingMode&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;powerSaver()&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="630" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-8" value="&lt;div&gt;AlertMode&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;activateAlertMode()&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="630" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-10" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="LB6RR5R6ET7taKvT4Xzy-6" target="LB6RR5R6ET7taKvT4Xzy-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="510" as="sourcePoint" />
+            <mxPoint x="450" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-11" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="LB6RR5R6ET7taKvT4Xzy-7" target="LB6RR5R6ET7taKvT4Xzy-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="510" as="sourcePoint" />
+            <mxPoint x="450" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-12" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LB6RR5R6ET7taKvT4Xzy-5" target="LB6RR5R6ET7taKvT4Xzy-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="510" as="sourcePoint" />
+            <mxPoint x="450" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-13" value="&lt;div&gt;Abstract class User&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="70" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-14" value="&lt;div&gt;Administrator&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="240" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-15" value="Resident" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="240" width="215" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-16" value="Guest" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="240" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-18" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.545;exitY=0.038;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="LB6RR5R6ET7taKvT4Xzy-14" target="LB6RR5R6ET7taKvT4Xzy-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="1020" as="sourcePoint" />
+            <mxPoint x="200" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-19" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.563;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="LB6RR5R6ET7taKvT4Xzy-13" target="LB6RR5R6ET7taKvT4Xzy-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="750" as="sourcePoint" />
+            <mxPoint x="450" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-20" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LB6RR5R6ET7taKvT4Xzy-13" target="LB6RR5R6ET7taKvT4Xzy-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="750" as="sourcePoint" />
+            <mxPoint x="450" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-494" value="enum UserControllStatusm " style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="400" width="230" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-495" value="&lt;div&gt;Smart House class&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="-490" width="510" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="LB6RR5R6ET7taKvT4Xzy-496" value="&lt;div&gt;Fields&lt;/div&gt;&lt;div&gt;- List&amp;lt;Users&amp;gt;&lt;/div&gt;&lt;div&gt;HashMap devices (&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="LB6RR5R6ET7taKvT4Xzy-495">
+          <mxGeometry y="30" width="510" height="130" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
