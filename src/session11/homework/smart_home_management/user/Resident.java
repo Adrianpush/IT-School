@@ -9,7 +9,7 @@ public class Resident extends Guest {
         super(name);
     }
 
-    public void applyScene(SmartHouse smartHouse, String roomName, Scene scene){
+    public void applyScene(SmartHouse smartHouse, String roomName, Scene scene) {
 
     }
 }

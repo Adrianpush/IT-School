@@ -15,11 +15,11 @@ public class SmartHouse {
         this.rooms = new ArrayList<>();
     }
 
-    public void addUser(User user){
+    public void addUser(User user) {
         users.add(user);
     }
 
-    public void addRoom(Room room){
+    public void addRoom(Room room) {
         rooms.add(room);
     }
 

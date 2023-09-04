@@ -15,6 +15,7 @@ public abstract class GenericDevice {
     }
 
     public abstract void turnOn();
+
     public abstract void turnOff();
 
     public String getDeviceName() {

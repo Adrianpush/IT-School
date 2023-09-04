@@ -2,7 +2,7 @@ package session11.homework.banksproblem;
 
 public class BankThree extends Bank {
 
-    private double balance;
+    private final double balance;
 
     public BankThree(double balance) {
         this.balance = balance;

@@ -29,8 +29,8 @@ public abstract class Room {
     }
 
     public void uninstallDevice(String deviceName) {
-        for (GenericDevice device: devices) {
-            if (device.getDeviceName().equals(deviceName)){
+        for (GenericDevice device : devices) {
+            if (device.getDeviceName().equals(deviceName)) {
                 devices.remove(device);
             }
         }

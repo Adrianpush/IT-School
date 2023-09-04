@@ -12,5 +12,6 @@ abstract class LightingDevice extends GenericDevice implements NightMode, PowerS
     }
 
     public abstract void turnOn();
+
     public abstract void turnOff();
 }

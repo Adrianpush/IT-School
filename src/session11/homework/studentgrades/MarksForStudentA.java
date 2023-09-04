@@ -1,6 +1,6 @@
 package session11.homework.studentgrades;
 
-public class MarksForStudentA extends Marks{
+public class MarksForStudentA extends Marks {
 
     int subjectOneMark;
     int subjectTwoMark;
