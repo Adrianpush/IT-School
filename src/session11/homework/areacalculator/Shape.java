@@ -1,4 +1,4 @@
-package session11.homework.areacalculator;
+package session11.homework_fun.areacalculator;
 
 abstract class Shape {
 

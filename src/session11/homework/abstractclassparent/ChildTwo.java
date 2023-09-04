@@ -1,4 +1,4 @@
-package session11.homework.abstractclassparent;
+package session11.homework_fun.abstractclassparent;
 
 public class ChildTwo extends Parent {
 

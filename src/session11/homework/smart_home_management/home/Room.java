@@ -1,6 +1,6 @@
-package session11.homework.smart_home_management.home;
+package session11.homework_fun.smart_home_management.home;
 
-import session11.homework.smart_home_management.device.abstracts.GenericDevice;
+import session11.homework_fun.smart_home_management.device.abstracts.GenericDevice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +29,8 @@ public abstract class Room {
     }
 
     public void uninstallDevice(String deviceName) {
-        for (GenericDevice device: devices) {
-            if (device.getDeviceName().equals(deviceName)){
+        for (GenericDevice device : devices) {
+            if (device.getDeviceName().equals(deviceName)) {
                 devices.remove(device);
             }
         }

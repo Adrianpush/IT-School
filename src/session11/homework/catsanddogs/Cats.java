@@ -1,4 +1,4 @@
-package session11.homework.catsanddogs;
+package session11.homework_fun.catsanddogs;
 
 public class Cats extends Animals {
 

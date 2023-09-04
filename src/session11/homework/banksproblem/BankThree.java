@@ -1,8 +1,8 @@
-package session11.homework.banksproblem;
+package session11.homework_fun.banksproblem;
 
 public class BankThree extends Bank {
 
-    private double balance;
+    private final double balance;
 
     public BankThree(double balance) {
         this.balance = balance;

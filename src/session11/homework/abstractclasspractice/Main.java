@@ -1,4 +1,4 @@
-package session11.homework.abstractclasspractice;
+package session11.homework_fun.abstractclasspractice;
 
 public class Main {
 

@@ -1,7 +1,7 @@
-package session11.homework.smart_home_management.device.abstracts;
+package session11.homework_fun.smart_home_management.device.abstracts;
 
-import session11.homework.smart_home_management.device.interfaces.NightMode;
-import session11.homework.smart_home_management.device.interfaces.PowerSavingMode;
+import session11.homework_fun.smart_home_management.device.interfaces.NightMode;
+import session11.homework_fun.smart_home_management.device.interfaces.PowerSavingMode;
 
 import java.time.LocalDate;
 
@@ -12,5 +12,6 @@ abstract class LightingDevice extends GenericDevice implements NightMode, PowerS
     }
 
     public abstract void turnOn();
+
     public abstract void turnOff();
 }

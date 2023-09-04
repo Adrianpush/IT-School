@@ -1,4 +1,4 @@
-package session11.homework.banksproblem;
+package session11.homework_fun.banksproblem;
 
 public class Main {
 

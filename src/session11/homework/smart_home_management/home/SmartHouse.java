@@ -1,6 +1,6 @@
-package session11.homework.smart_home_management.home;
+package session11.homework_fun.smart_home_management.home;
 
-import session11.homework.smart_home_management.user.User;
+import session11.homework_fun.smart_home_management.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +15,11 @@ public class SmartHouse {
         this.rooms = new ArrayList<>();
     }
 
-    public void addUser(User user){
+    public void addUser(User user) {
         users.add(user);
     }
 
-    public void addRoom(Room room){
+    public void addRoom(Room room) {
         rooms.add(room);
     }
 

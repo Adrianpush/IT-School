@@ -1,11 +1,11 @@
-package session11.homework.smart_home_management;
+package session11.homework_fun.smart_home_management;
 
-import session11.homework.smart_home_management.device.devices.AirConditioner;
-import session11.homework.smart_home_management.home.PrivateRoom;
-import session11.homework.smart_home_management.home.PublicRoom;
-import session11.homework.smart_home_management.home.SmartHouse;
-import session11.homework.smart_home_management.user.Owner;
-import session11.homework.smart_home_management.user.Resident;
+import session11.homework_fun.smart_home_management.device.devices.AirConditioner;
+import session11.homework_fun.smart_home_management.home.PrivateRoom;
+import session11.homework_fun.smart_home_management.home.PublicRoom;
+import session11.homework_fun.smart_home_management.home.SmartHouse;
+import session11.homework_fun.smart_home_management.user.Owner;
+import session11.homework_fun.smart_home_management.user.Resident;
 
 import java.time.LocalDate;
 
