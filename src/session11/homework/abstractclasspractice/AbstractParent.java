@@ -1,4 +1,4 @@
-package session11.homework_fun.abstractclasspractice;
+package session11.homework.abstractclasspractice;
 
 abstract class AbstractParent {
 

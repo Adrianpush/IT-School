@@ -1,4 +1,4 @@
-package session11.homework_fun.studentgrades;
+package session11.homework.studentgrades;
 
 public class MarksForStudentA extends Marks {
 

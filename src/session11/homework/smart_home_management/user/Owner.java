@@ -1,8 +1,8 @@
-package session11.homework_fun.smart_home_management.user;
+package session11.homework.smart_home_management.user;
 
-import session11.homework_fun.smart_home_management.device.abstracts.GenericDevice;
-import session11.homework_fun.smart_home_management.home.Room;
-import session11.homework_fun.smart_home_management.home.SmartHouse;
+import session11.homework.smart_home_management.device.abstracts.GenericDevice;
+import session11.homework.smart_home_management.home.Room;
+import session11.homework.smart_home_management.home.SmartHouse;
 
 public class Owner extends Resident {
 

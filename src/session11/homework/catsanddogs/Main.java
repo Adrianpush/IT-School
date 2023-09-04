@@ -1,4 +1,4 @@
-package session11.homework_fun.catsanddogs;
+package session11.homework.catsanddogs;
 
 public class Main {
 

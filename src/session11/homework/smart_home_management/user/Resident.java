@@ -1,7 +1,7 @@
-package session11.homework_fun.smart_home_management.user;
+package session11.homework.smart_home_management.user;
 
-import session11.homework_fun.smart_home_management.home.Scene;
-import session11.homework_fun.smart_home_management.home.SmartHouse;
+import session11.homework.smart_home_management.home.Scene;
+import session11.homework.smart_home_management.home.SmartHouse;
 
 public class Resident extends Guest {
 

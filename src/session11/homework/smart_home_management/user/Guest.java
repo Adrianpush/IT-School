@@ -1,4 +1,4 @@
-package session11.homework_fun.smart_home_management.user;
+package session11.homework.smart_home_management.user;
 
 public class Guest extends User {
 

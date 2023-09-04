@@ -1,6 +1,6 @@
-package session11.homework_fun.smart_home_management.home;
+package session11.homework.smart_home_management.home;
 
-import session11.homework_fun.smart_home_management.user.User;
+import session11.homework.smart_home_management.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
