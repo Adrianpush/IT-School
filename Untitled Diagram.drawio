@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-09-04T02:39:18.372Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0" etag="aAzpvC_cFydI6d6xfipt" version="21.7.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-04T02:57:27.790Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0" etag="dlA7sFlUlYgrR46URrEO" version="21.7.1" type="github">
   <diagram name="Page-1" id="9rA9lKoRtjfUEAICKigl">
-    <mxGraphModel dx="1687" dy="2020" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#663300" math="0" shadow="0">
+    <mxGraphModel dx="2049" dy="2217" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#663300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -41,7 +41,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="LB6RR5R6ET7taKvT4Xzy-13" value="&lt;div&gt;Abstract class User&lt;/div&gt;&lt;div&gt;String name&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="880" y="-1070" width="280" height="140" as="geometry" />
+          <mxGeometry x="880" y="-1070" width="280" height="110" as="geometry" />
         </mxCell>
         <mxCell id="LB6RR5R6ET7taKvT4Xzy-495" value="&lt;div&gt;Smart House class&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="30" y="-1070" width="510" height="170" as="geometry" />
@@ -49,10 +49,10 @@
         <mxCell id="LB6RR5R6ET7taKvT4Xzy-496" value="&lt;div&gt;Fields&lt;/div&gt;&lt;div&gt;List&amp;lt;User&amp;gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;List&amp;lt;Room&amp;gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="LB6RR5R6ET7taKvT4Xzy-495" vertex="1">
           <mxGeometry y="30" width="510" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="yLEq_J4bFB693XNkT7zh-1" value="&lt;div&gt;Room&amp;nbsp; Class&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="yLEq_J4bFB693XNkT7zh-1" value="&lt;div&gt;Abstract Room&amp;nbsp; Class&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="30" y="-850" width="510" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="yLEq_J4bFB693XNkT7zh-2" value="&lt;div&gt;Fields&lt;/div&gt;&lt;div&gt;String roomName&lt;/div&gt;&lt;div&gt;boolean isPrivate&lt;br&gt;&lt;/div&gt;&lt;div&gt;List&amp;lt;Device&amp;gt;&lt;/div&gt;&lt;div&gt;Methods&lt;/div&gt;&lt;div&gt;installDevice&lt;/div&gt;&lt;div&gt;uninstallDevice&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="yLEq_J4bFB693XNkT7zh-1">
+        <mxCell id="yLEq_J4bFB693XNkT7zh-2" value="&lt;div&gt;Fields&lt;/div&gt;&lt;div&gt;String roomName&lt;/div&gt;&lt;div&gt;List&amp;lt;Device&amp;gt;&lt;/div&gt;&lt;div&gt;Methods&lt;/div&gt;&lt;div&gt;installDevice&lt;/div&gt;&lt;div&gt;uninstallDevice&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="yLEq_J4bFB693XNkT7zh-1">
           <mxGeometry y="30" width="510" height="130" as="geometry" />
         </mxCell>
         <mxCell id="yLEq_J4bFB693XNkT7zh-5" value="&lt;div&gt;Abstract class Atmospheric Device&lt;/div&gt;&lt;div&gt;extends Device&lt;/div&gt;&lt;div&gt;implements PowerSavingMode&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
@@ -82,14 +82,14 @@
             <mxPoint x="510" y="-450" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yLEq_J4bFB693XNkT7zh-11" value="&lt;div&gt;Visitor&lt;br&gt;&lt;/div&gt;&lt;div&gt;extends User&lt;/div&gt;&lt;div&gt;control device if room is not private&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="880" y="-890" width="280" height="80" as="geometry" />
+        <mxCell id="yLEq_J4bFB693XNkT7zh-11" value="&lt;div&gt;Visitor&lt;br&gt;&lt;/div&gt;&lt;div&gt;extends User&lt;/div&gt;&lt;div&gt;setScene(Scene scene, PrivateRoom room)&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="-930" width="300" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="yLEq_J4bFB693XNkT7zh-12" value="&lt;div&gt;Resident&lt;/div&gt;&lt;div&gt;extends Visitor&lt;/div&gt;&lt;div&gt;controlDevice&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="yLEq_J4bFB693XNkT7zh-12" value="&lt;div&gt;Resident&lt;/div&gt;&lt;div&gt;extends Visitor&lt;/div&gt;&lt;div&gt;setScene(Scene scene, Room room)&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="860" y="-790" width="320" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yLEq_J4bFB693XNkT7zh-13" value="&lt;div&gt;Owner&lt;/div&gt;&lt;div&gt;extends Resident&lt;/div&gt;&lt;div&gt;installDevice&lt;/div&gt;&lt;div&gt;uninstallDevice&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="860" y="-680" width="340" height="80" as="geometry" />
+          <mxGeometry x="850" y="-680" width="340" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yLEq_J4bFB693XNkT7zh-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LB6RR5R6ET7taKvT4Xzy-13" target="yLEq_J4bFB693XNkT7zh-11">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -107,6 +107,27 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1080" y="-830" as="sourcePoint" />
             <mxPoint x="1130" y="-880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yLEq_J4bFB693XNkT7zh-17" value="&lt;div&gt;class Scene&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;settings for each abstract device type&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="-450" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yLEq_J4bFB693XNkT7zh-18" value="Private room class" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="575" y="-850" width="225" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yLEq_J4bFB693XNkT7zh-19" value="&lt;div&gt;Public room class&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="575" y="-760" width="225" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yLEq_J4bFB693XNkT7zh-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.002;exitY=0.553;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yLEq_J4bFB693XNkT7zh-2" target="yLEq_J4bFB693XNkT7zh-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="-720" as="sourcePoint" />
+            <mxPoint x="620" y="-770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yLEq_J4bFB693XNkT7zh-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.001;entryY=0.564;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="yLEq_J4bFB693XNkT7zh-2" target="yLEq_J4bFB693XNkT7zh-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="-720" as="sourcePoint" />
+            <mxPoint x="620" y="-770" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
