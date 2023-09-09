@@ -5,11 +5,16 @@ import java.util.List;
 
 public class Book {
 
-    private String title;
-    private List<Author> authorList;
+    private final String title;
+    private final List<Author> authorList;
     private String publisher;
     private String isbn;
     private String bookInformation;
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 
     public Book(String title, List<Author> authorList) {
         this.title = title;

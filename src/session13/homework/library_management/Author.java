@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Author {
 
-    private String name;
+    private final String name;
     private String nationality;
     private LocalDate birthday;
     private String authorInformation;
@@ -21,16 +21,8 @@ public class Author {
         return nationality;
     }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
     public LocalDate getBirthday() {
         return birthday;
-    }
-
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
     }
 
     public String getAuthorInformation() {
