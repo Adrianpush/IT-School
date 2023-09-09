@@ -2,6 +2,7 @@ package session13.homework.online_shop.shop;
 
 import session13.homework.online_shop.client.Client;
 import session13.homework.online_shop.order.Order;
+import session13.homework.online_shop.order.OrderStatus;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,11 +22,36 @@ public class Shop implements Recipient {
         this.credit = 0;
     }
 
+    public String getShopName() {
+        return shopName;
+    }
+
+    public HashMap<Product, Integer> getProducts() {
+        return products;
+    }
+
+    public double getCredit() {
+        return credit;
+    }
+
+    @Override
+    public void receiveMoney(double amount) {
+        credit += amount;
+    }
+
     public void addProduct(Product product) {
         if (products.containsKey(product)) {
             products.put(product, products.get(product) + 1);
         } else {
             products.put(product, 1);
+        }
+    }
+
+    public void addProduct(Product product, int quantity) {
+        if (products.containsKey(product)) {
+            products.put(product, products.get(product) + quantity);
+        } else {
+            products.put(product, quantity);
         }
     }
 
@@ -43,19 +69,12 @@ public class Shop implements Recipient {
         client.setShop(this);
     }
 
-    public void addProduct(Product product, int quantity) {
-        if (products.containsKey(product)) {
-            products.put(product, products.get(product) + quantity);
-        } else {
-            products.put(product, quantity);
-        }
-    }
-
     public void processOrder(Order order, Client client) {
         StringBuilder items = new StringBuilder();
         for (Product product : order.getOrderProducts()) {
             items.append(" ").append(product.getProductName());
         }
+        order.setOrderStatus(OrderStatus.SHIPPED);
         System.out.println("Sending items: " + items +
                 " to " + client.getClientName() + " at " + client.getShippingAddress());
     }
@@ -66,14 +85,6 @@ public class Shop implements Recipient {
                     " Price: " + product.getProductPrice() +
                     " Quantity: " + products.get(product));
         }
-    }
-
-    public String getShopName() {
-        return shopName;
-    }
-
-    public HashMap<Product, Integer> getProducts() {
-        return products;
     }
 
     public boolean productInStock(Product product) {
@@ -88,14 +99,5 @@ public class Shop implements Recipient {
         for (Product product : order.getOrderProducts()) {
             products.put(product, products.get(product) + 1);
         }
-    }
-
-    @Override
-    public void receiveMoney(double amount) {
-        credit += amount;
-    }
-
-    public double getCredit() {
-        return credit;
     }
 }

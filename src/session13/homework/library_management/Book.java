@@ -11,11 +11,6 @@ public class Book {
     private String isbn;
     private String bookInformation;
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
     public Book(String title, List<Author> authorList) {
         this.title = title;
         this.authorList = authorList;

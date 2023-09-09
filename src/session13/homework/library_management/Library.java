@@ -18,6 +18,10 @@ public class Library {
         this.memberList = new HashSet<>();
     }
 
+    public void setMaximumLendingDays(int maximumLendingDays) {
+        this.maximumLendingDays = maximumLendingDays;
+    }
+
     public void addBook(Book book) {
         if (books.containsKey(book)) {
             books.put(book, books.get(book) + 1);
@@ -87,10 +91,6 @@ public class Library {
                 printBookTitleAndAuthors(book);
             }
         }
-    }
-
-    public void setMaximumLendingDays(int maximumLendingDays) {
-        this.maximumLendingDays = maximumLendingDays;
     }
 
     private void printBookTitleAndAuthors(Book book) {

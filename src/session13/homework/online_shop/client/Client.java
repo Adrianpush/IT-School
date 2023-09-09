@@ -41,6 +41,19 @@ public class Client implements Payer {
         this.credit = credit;
     }
 
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
+    @Override
+    public boolean payMoney(double amount) {
+        if (amount <= credit) {
+            credit -= amount;
+            return true;
+        }
+        return false;
+    }
+
     public void addProductToOrder(Product product) {
         if (currentOrder == null) {
             currentOrder = new Order(this);
@@ -64,18 +77,5 @@ public class Client implements Payer {
             shop.unReserveProducts(currentOrder);
         }
         currentOrder = null;
-    }
-
-    public void setShop(Shop shop) {
-        this.shop = shop;
-    }
-
-    @Override
-    public boolean payMoney(double amount) {
-        if (amount <= credit) {
-            credit -= amount;
-            return true;
-        }
-        return false;
     }
 }

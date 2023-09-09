@@ -17,6 +17,18 @@ public class Payment {
         this.paymentStatus = PaymentStatus.STAND_BY;
     }
 
+    public double getAmount() {
+        return amount;
+    }
+
+    public PaymentStatus getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(PaymentStatus paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
     public boolean processPayment() {
         if (payer.payMoney(amount)) {
             recipient.receiveMoney(amount);
@@ -28,17 +40,5 @@ public class Payment {
             paymentStatus = PaymentStatus.FAILED;
             return false;
         }
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public PaymentStatus getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public void setPaymentStatus(PaymentStatus paymentStatus) {
-        this.paymentStatus = paymentStatus;
     }
 }

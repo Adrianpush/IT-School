@@ -15,20 +15,20 @@ public class Product {
         return productName;
     }
 
-    public String getProductDescription() {
-        return productDescription;
-    }
-
-    public double getProductPrice() {
-        return productPrice;
-    }
-
     public void setProductName(String productName) {
         this.productName = productName;
     }
 
+    public String getProductDescription() {
+        return productDescription;
+    }
+
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
+    }
+
+    public double getProductPrice() {
+        return productPrice;
     }
 
     public void setProductPrice(double productPrice) {

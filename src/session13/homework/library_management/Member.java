@@ -20,14 +20,6 @@ public class Member {
         this.borrowedBooks = new HashMap<>();
     }
 
-    protected void borrowBook(Book book, Duration duration) {
-        borrowedBooks.put(book, LocalDateTime.now().plus(duration));
-    }
-
-    protected void returnBook(Book book) {
-        this.borrowedBooks.remove(book);
-    }
-
     protected String getFirstName() {
         return firstName;
     }
@@ -58,6 +50,14 @@ public class Member {
 
     protected void setBorrowedBooks(HashMap<Book, LocalDateTime> borrowedBooks) {
         this.borrowedBooks = borrowedBooks;
+    }
+
+    protected void borrowBook(Book book, Duration duration) {
+        borrowedBooks.put(book, LocalDateTime.now().plus(duration));
+    }
+
+    protected void returnBook(Book book) {
+        this.borrowedBooks.remove(book);
     }
 
     protected boolean hasLateBook(Member member) {

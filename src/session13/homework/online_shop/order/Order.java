@@ -28,12 +28,12 @@ public class Order {
         this.orderFinalized = orderFinalized;
     }
 
-    public void addToOrder(Product product) {
-        orderProducts.add(product);
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
-    public void removeFromOrder(Product product) {
-        orderProducts.remove(product);
+    public void addToOrder(Product product) {
+        orderProducts.add(product);
     }
 
     public double getTotal() {
@@ -42,9 +42,5 @@ public class Order {
             total += product.getProductPrice();
         }
         return total;
-    }
-
-    public void setOrderStatus(OrderStatus orderStatus) {
-        this.orderStatus = orderStatus;
     }
 }
