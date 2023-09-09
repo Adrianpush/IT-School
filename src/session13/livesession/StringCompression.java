@@ -1,4 +1,4 @@
-package session13;
+package session13.livesession;
 
 public class StringCompression {
 
