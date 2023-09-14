@@ -18,7 +18,7 @@ public class ShoppingCart {
             int stringLength = random.nextInt(2, 6);
             StringBuilder stringBuilder = new StringBuilder();
             for (int charIndex = 0; charIndex < stringLength; charIndex++) {
-                stringBuilder.append((char) random.nextInt(97, 99));
+                stringBuilder.append((char) random.nextInt(97, 100));
             }
             String productID = stringBuilder.toString().trim();
             products.add(new Product(productID));
