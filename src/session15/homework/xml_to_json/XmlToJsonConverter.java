@@ -1,22 +1,27 @@
 package session15.homework.xml_to_json;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
+import java.io.File;
+import java.io.IOException;
+
+
 public class XmlToJsonConverter {
-    public static void main(String[] args) throws Exception {
-        // Create an XML mapper
-        ObjectMapper xmlMapper = new XmlMapper();
+    public static void main(String[] args) {
+        convertXmlToJson("src/session15/homework/xml_to_json/books.xml",
+                "src/session15/homework/xml_to_json/books.json");
+    }
 
-        // XML content as a String (replace with your actual XML content)
-        String xml = "<book><title>Java Programming</title><author>John Doe</author></book>";
-
-        // Convert XML to JSON
-        Book book = xmlMapper.readValue(xml, Book.class);
-        ObjectMapper jsonMapper = new ObjectMapper();
-        String json = jsonMapper.writeValueAsString(book);
-
-        // Print the JSON
-        System.out.println(json);
+    public static void convertXmlToJson(String xmlFilePath, String jsonFilePath) {
+        try {
+            XmlMapper xmlMapper = new XmlMapper();
+            JsonNode rootNode = xmlMapper.readTree(new File(xmlFilePath));
+            ObjectMapper jsonMapper = new ObjectMapper();
+            jsonMapper.writeValue(new File(jsonFilePath), rootNode);
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
     }
 }
