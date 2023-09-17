@@ -1,6 +1,6 @@
 package session15.homework.extra;
 
-public class Book implements Rating{
+public class Book implements Rating {
 
     String name;
     String author;

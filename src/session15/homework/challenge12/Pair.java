@@ -9,8 +9,6 @@ public class Pair<K, V> {
 
     /**
      * Create a class Pair which can hold a pair of objects, the objects can be of any type.
-     * @param kValue
-     * @param vValue
      */
     public Pair(K kValue, V vValue) {
         this.kValue = kValue;

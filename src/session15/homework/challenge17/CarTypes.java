@@ -14,6 +14,12 @@ public enum CarTypes {
         this.manufacturer = manufacturer;
     }
 
+    public static void main(String[] args) {
+        System.out.println(CarTypes.DACIA_LOGAN);
+        System.out.println(CarTypes.SKODA_OCTAVIA);
+        System.out.println(CarTypes.WOLKSVAGEN_GOLF);
+    }
+
     public double getAveragePrice() {
         return averagePrice;
     }
@@ -33,11 +39,5 @@ public enum CarTypes {
         stringBuilder.append("\nAverage Price: ").append(getAveragePrice()).append("$");
         stringBuilder.append("\nManufacturer: ").append(getManufacturer());
         return stringBuilder.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(CarTypes.DACIA_LOGAN);
-        System.out.println(CarTypes.SKODA_OCTAVIA);
-        System.out.println(CarTypes.WOLKSVAGEN_GOLF);
     }
 }

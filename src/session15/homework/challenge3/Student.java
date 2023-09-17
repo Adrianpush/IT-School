@@ -23,18 +23,6 @@ public class Student {
         this.studentID = UUID.randomUUID();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Student student)) return false;
-        return age == student.age && Objects.equals(name, student.name) && Objects.equals(email, student.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age, email);
-    }
-
     public static void main(String[] args) {
         Student student1 = new Student("Alfred", 22, "@");
         Student student2 = new Student("Butler", 21, "@");
@@ -50,5 +38,17 @@ public class Student {
         students.add(student3);
 
         System.out.println(students.size());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student student)) return false;
+        return age == student.age && Objects.equals(name, student.name) && Objects.equals(email, student.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, email);
     }
 }

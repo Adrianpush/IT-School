@@ -19,6 +19,16 @@ public class Song {
         this.artists = artists;
     }
 
+    public static void main(String[] args) {
+        Song song1 = new Song("Enter Sandman", "M");
+        Song song2 = new Song("Hit the lights", "M");
+        Song song3 = new Song("Enter Sandman", "M");
+
+        System.out.println(song1.equals(song1));
+        System.out.println(song1.equals(song2));
+        System.out.println(song1.equals(song3));
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,15 +43,5 @@ public class Song {
 
     public void setLength(Duration length) {
         this.length = length;
-    }
-
-    public static void main(String[] args) {
-        Song song1 = new Song("Enter Sandman", "M");
-        Song song2 = new Song("Hit the lights", "M");
-        Song song3 = new Song("Enter Sandman", "M");
-
-        System.out.println(song1.equals(song1));
-        System.out.println(song1.equals(song2));
-        System.out.println(song1.equals(song3));
     }
 }

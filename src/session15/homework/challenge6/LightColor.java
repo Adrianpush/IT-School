@@ -4,9 +4,9 @@ import java.time.Duration;
 
 public enum LightColor {
 
-    GREEN ("Go", Duration.ofSeconds(45)),
-    YELLOW ("Caution", Duration.ofSeconds(5)),
-    RED ("Stop", Duration.ofSeconds(30));
+    GREEN("Go", Duration.ofSeconds(45)),
+    YELLOW("Caution", Duration.ofSeconds(5)),
+    RED("Stop", Duration.ofSeconds(30));
     private String color;
     private Duration duration;
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Portfolio {
 
-    private  String owner;
+    private String owner;
     private List<Stock> stockList;
 
     public Portfolio(String owner) {
@@ -19,10 +19,8 @@ public class Portfolio {
 
     @Override
     public String toString() {
-
         StringBuilder stringBuilder = new StringBuilder(owner + "'s portfolio: "
         );
-
         for (Stock stock : stockList) {
             stringBuilder.append("\n ").append(stock.toString());
         }

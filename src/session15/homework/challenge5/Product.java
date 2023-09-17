@@ -21,23 +21,6 @@ public class Product {
         this.id = id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", id='" + id + '\'' +
-                '}';
-    }
-
     public static void main(String[] args) {
         Product product1 = new Product("Pan", 15.59, "1");
         Product product2 = new Product("Spoon", 15.59, "2");
@@ -64,6 +47,23 @@ public class Product {
         for (Product product : products) {
             System.out.println(product);
         }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", id='" + id + '\'' +
+                '}';
     }
 
     @Override

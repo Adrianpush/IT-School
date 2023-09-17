@@ -9,13 +9,23 @@ import java.util.Objects;
 
 public class Person {
 
+    String email;
     private String name;
     private int age;
-    String email;
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public static void main(String[] args) {
+        Person person1 = new Person("Rob", 22);
+        Person person2 = new Person("Liana", 29);
+        Person person3 = new Person("Rob", 22);
+
+        System.out.println(person1.equals(person1));
+        System.out.println(person1.equals(person2));
+        System.out.println(person1.equals(person3));
     }
 
     @Override
@@ -28,15 +38,5 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
-    }
-
-    public static void main(String[] args) {
-        Person person1 = new Person("Rob", 22);
-        Person person2 = new Person("Liana", 29);
-        Person person3 = new Person("Rob", 22);
-
-        System.out.println(person1.equals(person1));
-        System.out.println(person1.equals(person2));
-        System.out.println(person1.equals(person3));
     }
 }
