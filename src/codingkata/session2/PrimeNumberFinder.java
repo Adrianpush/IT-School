@@ -4,7 +4,7 @@ public class PrimeNumberFinder {
 
     public static void main(String[] args) {
 
-        for (long number = 1000000000001L; number < 10000000000000L; number+=2){
+        for (int number = 10000000; number < 100000000; number+=2){
             long startTime = System.currentTimeMillis();
             if (isPrime(number)){
                 long endTime = System.currentTimeMillis();
@@ -13,7 +13,7 @@ public class PrimeNumberFinder {
         }
     }
 
-    public static boolean isPrime(long number) {
+    public static boolean isPrime(int number) {
         if (number <= 1) {
             return false;
         }

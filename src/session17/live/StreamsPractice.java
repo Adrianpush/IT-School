@@ -23,6 +23,9 @@ public class StreamsPractice {
 //                "ratione voluptatem sequi nesciunt. ", "se");
 //        printLengthMap(strings);
         printListOfCharacters(strings);
+        char[][] hel = new char[3][3];
+
+
     }
 
     private static void printListOfCharacters(List<String> input) {
