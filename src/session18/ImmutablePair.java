@@ -11,8 +11,7 @@ public class ImmutablePair <T extends Cloneable, V extends Cloneable> {
     }
 
     public T getFirstItem() throws CloneNotSupportedException {
-        Object obj = new Object();
-        return (T) obj.clone();
+        return firstItem;
     }
 
     public V getSecondItem() {
