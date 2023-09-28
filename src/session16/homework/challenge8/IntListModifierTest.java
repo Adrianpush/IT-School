@@ -27,5 +27,6 @@ public class IntListModifierTest {
         System.out.println("All numbers to positive: " + intListModifier.listModifier(integers, toPositive));
         System.out.println("All numbers to negative: " + intListModifier.listModifier(integers, toNegative));
         System.out.println("Original List: " + integers);
+
     }
 }
